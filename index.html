@@ -6,8 +6,6 @@
 <title>MedRehab | Physiotherapy, Rehab &amp; Wellness | Harare, Zimbabwe</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-
-
 :root{
   --blue:#1a56b0;
   --blue2:#1045a0;
@@ -21,26 +19,104 @@
   --mid2:#5a7aaa;
   --dark:#0a1f3e;
   --dark2:#061530;
+  --top-bar-bg: #0a1f3e;
+  --top-bar-text: #ffffff;
+  --top-bar-highlight: #63a8f5;
 }
+
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Open Sans',sans-serif;color:var(--dark);overflow-x:hidden;font-size:17px;}
+body{
+  font-family:'Open Sans',sans-serif;
+  color:var(--dark);
+  overflow-x:hidden;
+  font-size:17px;
+  padding-top: 110px; /* Adjusted for top bar + nav */
+}
 img{max-width:100%;display:block;}
 a{text-decoration:none;}
 
-/* NAV */
+/* TOP BAR - NEW SECTION */
+.top-bar {
+  background: var(--top-bar-bg);
+  color: var(--top-bar-text);
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 2px solid var(--blue-lt);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.top-bar .ct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 48px;
+}
+
+.top-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.top-contact-item svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--top-bar-highlight);
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.top-contact-item span {
+  color: var(--top-bar-text);
+  font-weight: 500;
+}
+
+.top-contact-item strong {
+  color: var(--top-bar-highlight);
+  font-weight: 700;
+  margin-left: 3px;
+}
+
+/* NAV - FIXED LOGO STRUCTURE */
 nav{
-  position:fixed;top:0;width:100%;z-index:900;
-  height:76px;display:flex;align-items:center;overflow:visible;
-  justify-content:space-between;padding:0 48px 0 32px;
-  background:#fff;box-shadow:0 2px 20px rgba(26,86,176,.15);
-  transition:background .2s,box-shadow .2s;
+  position:fixed;
+  top: 52px; /* Height of top bar */
+  width:100%;
+  z-index:999;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 48px 0 32px;
+  background:#fff;
+  box-shadow:0 2px 20px rgba(26,86,176,.15);
+  transition:all 0.3s ease;
 }
+
 .logo-pill{
-  background:transparent;padding:0;
-  display:flex;align-items:center;gap:12px;overflow:visible;
+  background:transparent;
+  padding:0;
+  display:flex;
+  align-items:center;
+  height: 100%;
 }
-.logo-pill img{height:90px;width:auto;object-fit:contain;}
+
+.logo-pill img {
+  height: 70px;
+  width: auto;
+  max-width: 300px;
+  object-fit: contain;
+}
+
 .nav-links{display:flex;list-style:none;gap:26px;align-items:center;}
 .nav-links a{
   color:var(--dark);font-family:'Montserrat',sans-serif;
@@ -61,7 +137,7 @@ nav{
 .ham.open span:nth-child(2){opacity:0;}
 .ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
 .mob-nav{
-  display:none;position:fixed;top:76px;left:0;right:0;
+  display:none;position:fixed;top:122px;left:0;right:0;
   background:#fff;z-index:850;box-shadow:0 8px 30px rgba(26,86,176,.18);flex-direction:column;
 }
 .mob-nav.open{display:flex;}
@@ -76,6 +152,7 @@ nav{
   margin:12px 28px 24px;padding:15px;border-bottom:none;
 }
 
+/* Rest of your CSS remains the same from here */
 /* BUTTONS */
 .btn-blue{
   background:var(--blue);color:#fff;padding:15px 30px;
@@ -95,7 +172,7 @@ nav{
 
 /* HERO */
 #hero{
-  min-height:100vh;padding-top:76px;
+  min-height:100vh;
   background:
     linear-gradient(to right,rgba(6,21,48,.96) 50%,rgba(6,21,48,.70) 100%),
     url('bg.webp') center/cover no-repeat;
@@ -497,90 +574,6 @@ footer{background:var(--dark);padding:70px 0 28px;}
 .mul li{padding:8px 0 8px 18px;position:relative;font-size:15px;color:#1e3a5f;line-height:1.6;border-bottom:1px solid #e8f0ff;}
 .mul li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;background:var(--blue);}
 
-/* RESPONSIVE */
-@media(max-width:1100px){
-  .tg{grid-template-columns:repeat(3,1fr);}
-  .ft-top{grid-template-columns:1fr 1fr;gap:36px;}
-  .bk-grid{grid-template-columns:1fr;}
-  .bk-l,.bk-r{padding:44px 36px;}
-  .st{font-size:30px;}
-  .test-grid{grid-template-columns:1fr 1fr;}
-  .wc-grid{grid-template-columns:1fr;}
-  .wc-left{padding-right:0;}
-  .wc-right{min-height:340px;}
-}
-@media(max-width:900px){
- nav{padding:0 20px;height:64px;background:var(--dark);box-shadow:0 2px 16px rgba(0,0,0,.3);} .mob-nav{top:64px;} .logo-pill{background:transparent;padding:0;flex:1;justify-content:flex-start;margin-left:0;} .logo-pill img{height:50px;} .nav-links,.nav-book{display:none!important;} .ham{display:flex;}
-
-  .ham span{background:#fff;}
-  #hero{padding-top:64px;}
-  .hero-wrap{grid-template-columns:1fr;padding:40px 22px 52px;gap:0;}
-  .hero-quick{display:none;}
-  .hero-mob-cards{display:block;}
-  .hero-h1{font-size:40px;}
-  .hero-p{font-size:15.5px;max-width:100%;}
-  .ab-grid{grid-template-columns:1fr;gap:36px;}
-  .ab-img{height:300px;}
-  .ap-grid{grid-template-columns:1fr;display:flex;flex-direction:column;}
-  .ap-left{padding-right:0;order:1;}
-  .ap-right{order:2;min-height:380px;height:380px;position:relative;flex-shrink:0;}
-  .ap-right-bg{position:absolute;inset:0;width:100%;height:100%;}
-  .ap-ov{position:absolute;inset:0;width:100%;height:100%;padding:24px 22px;justify-content:center;}
-  .co-grid{grid-template-columns:1fr;}
-  .co-left{padding-right:0;}
-  .co-right{min-height:280px;}
-  .co-svc-grid{grid-template-columns:1fr;}
-  .map-single{max-width:100%;}
-  .map-touch-block{display:flex;}
-  .m-cols{grid-template-columns:1fr;}
-  .mi{padding:28px 28px 36px;}
-  .mb-img{height:200px;}
-  .ct{padding:0 22px;}
-  .sp{padding:68px 0;}
-  .ft-top{grid-template-columns:1fr 1fr;gap:32px;}
-  .test-grid{grid-template-columns:1fr;}
-  .tg{grid-template-columns:1fr 1fr;}
-  .wc-right{min-height:280px;height:280px;}
-}
-@media(max-width:620px){
-  nav{padding:0 16px;height:60px;}
-  .mob-nav{top:60px;}
-  .logo-pill img{height:44px;}
-  #hero{padding-top:60px;}
-  .hero-wrap{padding:28px 16px 44px;}
-  .hero-h1{font-size:32px;line-height:1.08;}
-  .hero-p{font-size:14.5px;line-height:1.8;margin-bottom:26px;}
-  .hero-btns{flex-direction:column;gap:10px;}
-  .hero-btns a{text-align:center;width:100%;padding:14px;}
-  .fr{grid-template-columns:1fr;}
-  .ft-top{grid-template-columns:1fr;gap:28px;}
-  .ft-bot{flex-direction:column;align-items:flex-start;}
-  .tg{grid-template-columns:1fr;}
-  .sp{padding:52px 0;}
-  .bk-l,.bk-r{padding:32px 18px;}
-  .mi{padding:20px 18px 28px;}
-  .mi .st{font-size:22px;}
-  .st{font-size:24px;}
-  .sb{font-size:15px;}
-  .stats{flex-direction:column;gap:2px;}
-  .ct{padding:0 16px;}
-  .submit-btns{grid-template-columns:1fr;}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Unique Google Button Style */
 .gx-btn-wrapper{
   display:inline-flex;
@@ -598,35 +591,367 @@ footer{background:var(--dark);padding:70px 0 28px;}
   box-shadow:0 4px 14px rgba(0,0,0,0.15);
   transition:all .25s ease;
 }
-
 .gx-btn-wrapper:hover{
   background:#1666c1;
   transform:translateY(-2px);
   box-shadow:0 6px 18px rgba(0,0,0,0.2);
 }
-
 .gx-btn-wrapper:active{
   transform:translateY(0);
   box-shadow:0 3px 10px rgba(0,0,0,0.15);
 }
+.gx-btn-icon{display:flex;align-items:center;justify-content:center;}
+.gx-btn-text{display:inline-block;}
 
-.gx-btn-icon{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .tg{grid-template-columns:repeat(3,1fr);}
+  .ft-top{grid-template-columns:1fr 1fr;gap:36px;}
+  .bk-grid{grid-template-columns:1fr;}
+  .bk-l,.bk-r{padding:44px 36px;}
+  .st{font-size:30px;}
+  .test-grid{grid-template-columns:1fr 1fr;}
+  .wc-grid{grid-template-columns:1fr;}
+  .wc-left{padding-right:0;}
+  .wc-right{min-height:340px;}
 }
-
-.gx-btn-text{
-  display:inline-block;
+@media(max-width:900px){
+  body { 
+    padding-top: 104px; 
+  }
+  
+  .top-bar {
+    padding: 8px 0;
+  }
+  
+  .top-bar .ct {
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  
+  .top-contact-item {
+    font-size: 13px;
+  }
+  
+  nav {
+    top: 58px;
+    height: 60px;
+    padding: 0 20px;
+    background: var(--dark);
+    box-shadow: 0 2px 16px rgba(0,0,0,.3);
+  }
+  
+  .logo-pill {
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .logo-pill img {
+    height: 45px;
+    max-width: 160px;
+  }
+  
+  .nav-links, .nav-book {
+    display: none !important;
+  }
+  
+  .ham {
+    display: flex;
+  }
+  
+  .ham span {
+    background: #fff;
+  }
+  
+  .mob-nav {
+    top: 118px;
+  }
+  
+  #hero {
+    padding-top: 0;
+  }
+  
+  .hero-wrap {
+    grid-template-columns: 1fr;
+    padding: 40px 22px 52px;
+    gap: 0;
+  }
+  
+  .hero-quick {
+    display: none;
+  }
+  
+  .hero-mob-cards {
+    display: block;
+  }
+  
+  .hero-h1 {
+    font-size: 40px;
+  }
+  
+  .hero-p {
+    font-size: 15.5px;
+    max-width: 100%;
+  }
+  
+  .ab-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  
+  .ab-img {
+    height: 300px;
+  }
+  
+  .ap-grid {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ap-left {
+    padding-right: 0;
+    order: 1;
+  }
+  
+  .ap-right {
+    order: 2;
+    min-height: 380px;
+    height: 380px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+  .ap-right-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .ap-ov {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 24px 22px;
+    justify-content: center;
+  }
+  
+  .co-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .co-left {
+    padding-right: 0;
+  }
+  
+  .co-right {
+    min-height: 280px;
+  }
+  
+  .co-svc-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .map-single {
+    max-width: 100%;
+  }
+  
+  .map-touch-block {
+    display: flex;
+  }
+  
+  .m-cols {
+    grid-template-columns: 1fr;
+  }
+  
+  .mi {
+    padding: 28px 28px 36px;
+  }
+  
+  .mb-img {
+    height: 200px;
+  }
+  
+  .ct {
+    padding: 0 22px;
+  }
+  
+  .sp {
+    padding: 68px 0;
+  }
+  
+  .ft-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  
+  .test-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tg {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .wc-right {
+    min-height: 280px;
+    height: 280px;
+  }
+}
+@media(max-width:620px){
+  body { 
+    padding-top: 98px; 
+  }
+  
+  .top-bar {
+    padding: 6px 0;
+  }
+  
+  .top-bar .ct {
+    padding: 0 16px;
+    gap: 4px;
+  }
+  
+  .top-contact-item {
+    font-size: 12px;
+  }
+  
+  .top-contact-item svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  nav {
+    top: 52px;
+    height: 55px;
+    padding: 0 16px;
+  }
+  
+  .logo-pill img {
+    height: 70px;
+    max-width: 190px;
+  }
+  
+  .mob-nav {
+    top: 107px;
+  }
+  
+  #hero {
+    padding-top: 0;
+  }
+  
+  .hero-wrap {
+    padding: 28px 16px 44px;
+  }
+  
+  .hero-h1 {
+    font-size: 32px;
+    line-height: 1.08;
+  }
+  
+  .hero-p {
+    font-size: 14.5px;
+    line-height: 1.8;
+    margin-bottom: 26px;
+  }
+  
+  .hero-btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .hero-btns a {
+    text-align: center;
+    width: 100%;
+    padding: 14px;
+  }
+  
+  .fr {
+    grid-template-columns: 1fr;
+  }
+  
+  .ft-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  
+  .ft-bot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .tg {
+    grid-template-columns: 1fr;
+  }
+  
+  .sp {
+    padding: 52px 0;
+  }
+  
+  .bk-l, .bk-r {
+    padding: 32px 18px;
+  }
+  
+  .mi {
+    padding: 20px 18px 28px;
+  }
+  
+  .mi .st {
+    font-size: 22px;
+  }
+  
+  .st {
+    font-size: 24px;
+  }
+  
+  .sb {
+    font-size: 15px;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .ct {
+    padding: 0 16px;
+  }
+  
+  .submit-btns {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- TOP BAR - NEW SECTION WITH PHONE AND ADDRESS -->
+<div class="top-bar">
+  <div class="ct">
+    <div class="top-contact-item">
+      <svg viewBox="0 0 24 24">
+        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+      </svg>
+      <span>Phone: <strong>+263 71 481 7373</strong></span>
+    </div>
+    <div class="top-contact-item">
+      <svg viewBox="0 0 24 24">
+        <path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+      </svg>
+      <span>Address: <strong>23 Clayton Road, Milton Park, Harare</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV - RESTRUCTURED WITH PROPER LOGO POSITIONING -->
 <nav id="nav">
   <div class="logo-pill">
-    <img src="ligs.png" alt="MedRehab">
+    <img src="logo.png" alt="MedRehab">
   </div>
   <ul class="nav-links" id="nl">
     <li><a href="#hero" class="active">Home</a></li>
@@ -651,6 +976,7 @@ footer{background:var(--dark);padding:70px 0 28px;}
   <a href="#booking" class="mob-book" onclick="cN()">Book Appointment</a>
 </div>
 
+<!-- The rest of your HTML sections remain exactly the same -->
 <!-- HERO -->
 <section id="hero">
   <div class="hero-wrap">
@@ -697,6 +1023,7 @@ footer{background:var(--dark);padding:70px 0 28px;}
   </div>
 </section>
 
+<!-- Continue with your remaining sections exactly as they were -->
 <!-- ABOUT -->
 <section id="about" class="sp"><div class="ct"><div class="ab-grid rv">
 <img src="about.jpeg" alt="MedRehab – Harare" class="ab-img" loading="lazy">
@@ -845,7 +1172,6 @@ footer{background:var(--dark);padding:70px 0 28px;}
         <div class="partner-row">
           <div class="pbadge">Health Professions Authority</div>
           <div class="pbadge">5.0 ★ Google</div>
-          
         </div>
       </div>
     </div>
@@ -977,29 +1303,17 @@ footer{background:var(--dark);padding:70px 0 28px;}
       <div class="ci"><div class="ci-i"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div><div><div class="ci-lbl">Phone / WhatsApp</div><div class="ci-val">+263 77 351 0223</div></div></div>
       <div class="ci"><div class="ci-i"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><div class="ci-lbl">Working Hours</div><div class="ci-val">Mon – Fri: 08:00 – 16:30<br>Saturday: 08:00 – 13:00<br>Sunday: Closed</div></div></div>
       <div class="ci"><div class="ci-i"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><div class="ci-lbl">Email</div><div class="ci-val">themedrehab@gmail.com</div></div></div>
-
-
-
-
-
-
-
-
-
-
-
       <a href="https://share.google/Yz6StWbhSFC0W1S5y" target="_blank" class="gx-btn-wrapper">
-  <span class="gx-btn-icon">
-    <svg viewBox="0 0 48 48" width="22" height="22">
-      <path fill="#4285F4" d="M24 9.5c3.54 0 6.73 1.22 9.24 3.22l6.86-6.86C35.64 2.23 30.2 0 24 0 14.62 0 6.5 5.48 2.56 13.44l8 6.21C12.27 13.39 17.6 9.5 24 9.5z"/>
-      <path fill="#34A853" d="M46.1 24.55c0-1.64-.15-3.21-.42-4.73H24v9h12.4c-.54 2.9-2.17 5.36-4.63 7.02l7.19 5.59C43.97 37.3 46.1 31.45 46.1 24.55z"/>
-      <path fill="#FBBC05" d="M10.56 28.65A14.5 14.5 0 019.5 24c0-1.62.28-3.18.77-4.65l-8-6.21A23.94 23.94 0 000 24c0 3.86.93 7.51 2.56 10.73l8-6.08z"/>
-      <path fill="#EA4335" d="M24 48c6.2 0 11.41-2.05 15.21-5.57l-7.19-5.59c-2 1.35-4.57 2.16-8.02 2.16-6.39 0-11.73-3.9-13.44-9.2l-8 6.08C6.5 42.52 14.62 48 24 48z"/>
-    </svg>
-  </span>
-  <span class="gx-btn-text">View on Google</span>
-</a>
-
+        <span class="gx-btn-icon">
+          <svg viewBox="0 0 48 48" width="22" height="22">
+            <path fill="#4285F4" d="M24 9.5c3.54 0 6.73 1.22 9.24 3.22l6.86-6.86C35.64 2.23 30.2 0 24 0 14.62 0 6.5 5.48 2.56 13.44l8 6.21C12.27 13.39 17.6 9.5 24 9.5z"/>
+            <path fill="#34A853" d="M46.1 24.55c0-1.64-.15-3.21-.42-4.73H24v9h12.4c-.54 2.9-2.17 5.36-4.63 7.02l7.19 5.59C43.97 37.3 46.1 31.45 46.1 24.55z"/>
+            <path fill="#FBBC05" d="M10.56 28.65A14.5 14.5 0 019.5 24c0-1.62.28-3.18.77-4.65l-8-6.21A23.94 23.94 0 000 24c0 3.86.93 7.51 2.56 10.73l8-6.08z"/>
+            <path fill="#EA4335" d="M24 48c6.2 0 11.41-2.05 15.21-5.57l-7.19-5.59c-2 1.35-4.57 2.16-8.02 2.16-6.39 0-11.73-3.9-13.44-9.2l-8 6.08C6.5 42.52 14.62 48 24 48z"/>
+          </svg>
+        </span>
+        <span class="gx-btn-text">View on Google</span>
+      </a>
     </div>
     <div class="bk-r">
       <div id="fw">
