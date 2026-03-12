@@ -38,7 +38,7 @@ nav{
   background:transparent;padding:0;
   display:flex;align-items:center;gap:12px;overflow:visible;
 }
-.logo-pill img{height:62px;width:auto;object-fit:contain;}
+.logo-pill img{height:90px;width:auto;object-fit:contain;}
 .nav-links{display:flex;list-style:none;gap:26px;align-items:center;}
 .nav-links a{
   color:var(--dark);font-family:'Montserrat',sans-serif;
@@ -508,12 +508,37 @@ footer{background:var(--dark);padding:70px 0 28px;}
   .wc-right{min-height:340px;}
 }
 @media(max-width:900px){
-  nav{padding:0 20px;height:64px;background:var(--dark);box-shadow:0 2px 16px rgba(0,0,0,.3);}
+  nav{
+    padding:0 20px;
+    height:64px;
+    background:var(--dark);
+    box-shadow:0 2px 16px rgba(0,0,0,.3);
+  }
+
   .mob-nav{top:64px;}
-  .logo-pill{background:transparent;padding:0;flex:1;justify-content:flex-start;margin-left:0;}
-  .logo-pill img{height:50px;}
-  .nav-links,.nav-book{display:none!important;}
-  .ham{display:flex;}
+
+  .logo-pill{
+    background:transparent;
+    padding:0;
+    flex:1;
+    display:flex;
+    justify-content:center;   /* center the logo */
+    align-items:center;
+  }
+
+  .logo-pill img{
+    height: 80px;   /* 3x bigger than 50px */
+  }
+
+  .nav-links,
+  .nav-book{
+    display:none!important;
+  }
+
+  .ham{
+    display:flex;
+  }
+}
   .ham span{background:#fff;}
   #hero{padding-top:64px;}
   .hero-wrap{grid-template-columns:1fr;padding:40px 22px 52px;gap:0;}
@@ -628,7 +653,7 @@ footer{background:var(--dark);padding:70px 0 28px;}
 <!-- NAV -->
 <nav id="nav">
   <div class="logo-pill">
-    <img src="logo.png" alt="MedRehab">
+    <img src="ligs.png" alt="MedRehab">
   </div>
   <ul class="nav-links" id="nl">
     <li><a href="#hero" class="active">Home</a></li>
