@@ -3,2728 +3,1624 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fragrances Corner — Original Perfumes, Zimbabwe</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>MedRehab | Physiotherapy, Rehab &amp; Wellness | Harare, Zimbabwe</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --blue:#1a56b0;
+  --blue2:#1045a0;
+  --blue3:#2265cc;
+  --blue-lt:#4a8fe8;
+  --blue-sky:#63a8f5;
+  --white:#ffffff;
+  --offwhite:#f0f6ff;
+  --gray:#e8f0ff;
+  --mid:#3a5a8a;
+  --mid2:#5a7aaa;
+  --dark:#0a1f3e;
+  --dark2:#061530;
+  --top-bar-bg: #0a1f3e;
+  --top-bar-text: #ffffff;
+  --top-bar-highlight: #63a8f5;
+}
 
-  :root {
-    --navy: #0d1b2a;
-    --navy-mid: #162032;
-    --navy-light: #1e2f45;
-    --gold: #c9a84c;
-    --gold-light: #e0c97a;
-    --cream: #f5f0e8;
-    --cream-dark: #ede5d6;
-    --white: #ffffff;
-    --text-dark: #0d1b2a;
-    --text-mid: #4a5568;
-    --text-light: #8a9ab0;
-    --border: rgba(201,168,76,0.25);
-    --shadow: 0 20px 60px rgba(13,27,42,0.12);
-    --shadow-gold: 0 8px 32px rgba(201,168,76,0.18);
-    --font-display: 'Cormorant Garamond', serif;
-    --font-body: 'Jost', sans-serif;
-    --transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Open Sans',sans-serif;
+  color:var(--dark);
+  overflow-x:hidden;
+  font-size:17px;
+  padding-top: 110px; /* Adjusted for top bar + nav */
+}
+img{max-width:100%;display:block;}
+a{text-decoration:none;}
+
+/* TOP BAR - NEW SECTION */
+.top-bar {
+  background: var(--top-bar-bg);
+  color: var(--top-bar-text);
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 2px solid var(--blue-lt);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.top-bar .ct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 48px;
+}
+
+.top-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.top-contact-item svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--top-bar-highlight);
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.top-contact-item span {
+  color: var(--top-bar-text);
+  font-weight: 500;
+}
+
+.top-contact-item strong {
+  color: var(--top-bar-highlight);
+  font-weight: 700;
+  margin-left: 3px;
+}
+
+/* NAV - FIXED LOGO STRUCTURE */
+nav{
+  position:fixed;
+  top: 52px; /* Height of top bar */
+  width:100%;
+  z-index:999;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 48px 0 32px;
+  background:#fff;
+  box-shadow:0 2px 20px rgba(26,86,176,.15);
+  transition:all 0.3s ease;
+}
+
+.logo-pill{
+  background:transparent;
+  padding:0;
+  display:flex;
+  align-items:center;
+  height: 100%;
+}
+
+.logo-pill img {
+  height: 70px;
+  width: auto;
+  max-width: 300px;
+  object-fit: contain;
+}
+
+.nav-links{display:flex;list-style:none;gap:26px;align-items:center;}
+.nav-links a{
+  color:var(--dark);font-family:'Montserrat',sans-serif;
+  font-size:11.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.7px;padding-bottom:3px;
+  border-bottom:2px solid transparent;transition:all .2s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);border-color:var(--blue);}
+.nav-book{
+  background:var(--blue);color:#fff;padding:13px 24px;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:11.5px;
+  text-transform:uppercase;letter-spacing:1px;transition:background .2s;white-space:nowrap;
+}
+.nav-book:hover{background:var(--blue2);}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+.ham span{display:block;width:24px;height:2px;background:var(--dark);transition:all .3s;}
+.ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.ham.open span:nth-child(2){opacity:0;}
+.ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mob-nav{
+  display:none;position:fixed;top:122px;left:0;right:0;
+  background:#fff;z-index:850;box-shadow:0 8px 30px rgba(26,86,176,.18);flex-direction:column;
+}
+.mob-nav.open{display:flex;}
+.mob-nav a{
+  display:block;padding:15px 28px;font-family:'Montserrat',sans-serif;
+  font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+  color:var(--dark);border-bottom:1px solid #dce8ff;transition:color .2s;
+}
+.mob-nav a:hover{color:var(--blue);}
+.mob-nav .mob-book{
+  background:var(--blue);color:#fff;text-align:center;
+  margin:12px 28px 24px;padding:15px;border-bottom:none;
+}
+
+/* Rest of your CSS remains the same from here */
+/* BUTTONS */
+.btn-blue{
+  background:var(--blue);color:#fff;padding:15px 30px;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;
+  text-transform:uppercase;letter-spacing:1px;border:none;cursor:pointer;
+  transition:background .2s;display:inline-block;
+}
+.btn-blue:hover{background:var(--blue2);}
+.btn-ghost{
+  background:transparent;color:#fff;padding:15px 30px;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;
+  text-transform:uppercase;letter-spacing:1px;
+  border:2px solid rgba(255,255,255,.6);cursor:pointer;
+  transition:all .2s;display:inline-block;
+}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.15);}
+
+/* HERO */
+#hero{
+  min-height:100vh;
+  background:
+    linear-gradient(to right,rgba(6,21,48,.96) 50%,rgba(6,21,48,.70) 100%),
+    url('bg.webp') center/cover no-repeat;
+  display:flex;align-items:center;
+}
+.hero-wrap{
+  max-width:1280px;margin:0 auto;width:100%;
+  padding:70px 48px;
+  display:grid;grid-template-columns:1fr 290px;gap:44px;align-items:center;
+}
+.hero-tag{
+  font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:3.5px;
+  color:rgba(100,180,255,.95);margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-tag::before{content:'';width:30px;height:2px;background:rgba(100,180,255,.8);}
+.hero-h1{
+  font-family:'Playfair Display',serif;font-size:56px;
+  font-weight:800;line-height:1.07;color:#fff;margin-bottom:20px;
+}
+.hero-h1 em{color:#7ec8f8;font-style:italic;}
+.hero-p{
+  font-size:17px;line-height:1.85;color:rgba(255,255,255,.88);
+  max-width:500px;margin-bottom:34px;
+}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+
+/* Quick Links Sidebar */
+.hero-quick{display:flex;flex-direction:column;}
+.hq{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(26,86,176,.22);border-left:4px solid rgba(100,180,255,.8);
+  padding:15px 18px;border-bottom:1px solid rgba(255,255,255,.09);
+  cursor:pointer;transition:background .25s;
+}
+.hq:hover{background:rgba(26,86,176,.45);}
+.hq-ico{width:40px;height:40px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.hq-ico svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.hq-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#fff;}
+.hq-lbl::after{content:'';display:block;width:100%;height:2px;background:rgba(100,180,255,.8);margin-top:4px;}
+
+/* Mobile hero cards */
+.hero-mob-cards{display:none;margin-top:24px;width:100%;}
+.hmc-grid{display:grid;grid-template-columns:1fr !important;gap:0;}
+.hmc{
+  display:flex;align-items:center;gap:11px;
+  background:rgba(26,86,176,.22);border-left:3px solid rgba(100,180,255,.8);
+  padding:13px 12px;border-bottom:1px solid rgba(255,255,255,.09);
+  cursor:pointer;transition:background .2s;
+}
+.hmc:hover{background:rgba(26,86,176,.42);}
+.hmc-ico{width:34px;height:34px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.hmc-ico svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.hmc-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#fff;line-height:1.3;}
+.hmc-lbl::after{content:'';display:block;width:100%;height:2px;background:rgba(100,180,255,.8);margin-top:3px;}
+
+/* SHARED */
+.sp{padding:96px 0;}
+.ct{max-width:1280px;margin:0 auto;padding:0 48px;}
+.ey{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.si{width:52px;height:52px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.si svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+.si.p{background:var(--blue);}
+.si.v{background:var(--blue3);}
+.si.d{background:rgba(255,255,255,.16);}
+.st{font-family:'Playfair Display',serif;font-weight:800;font-size:36px;line-height:1.1;color:var(--dark);}
+.st.w{color:#fff;}
+.ul{width:180px;height:3px;background:linear-gradient(to right,var(--blue),var(--blue-lt));margin:12px 0 22px;}
+.sb{font-size:17px;line-height:1.85;color:#1e3a5f;}
+.sb.w{color:rgba(255,255,255,.88);}
+.lk{
+  display:inline-block;margin-top:22px;color:var(--dark);
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;
+  text-transform:uppercase;letter-spacing:1px;
+  border-bottom:2px solid var(--blue);padding-bottom:3px;transition:color .2s;
+}
+.lk:hover{color:var(--blue);}
+.lk.w{color:#fff;}
+.lk.w:hover{color:#7ec8f8;}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease;}
+.rv.vis{opacity:1;transform:translateY(0);}
+
+/* ABOUT */
+#about{background:#fff;}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.ab-img{
+  width:100%;
+  height:460px;
+  object-fit:cover;
+  display:block;
+  border-top:4px solid var(--blue);
+}
+.stats{display:flex;gap:2px;margin-top:28px;}
+.stat{flex:1;padding:18px 16px;background:var(--offwhite);border-left:4px solid var(--blue);}
+.sn{font-family:'Playfair Display',serif;font-size:30px;font-weight:800;color:var(--blue);}
+.sl2{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--mid);margin-top:4px;font-family:'Montserrat',sans-serif;font-weight:600;}
+
+/* SERVICES */
+#what-we-treat{background:var(--dark);}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.tc{
+  display:flex;flex-direction:column;gap:10px;padding:30px 24px;
+  border-left:4px solid var(--blue-lt);background:rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  border-right:1px solid rgba(255,255,255,.06);
+  cursor:pointer;transition:background .25s,transform .18s;min-height:175px;
+}
+.tc:hover{background:rgba(26,86,176,.32);transform:translateY(-2px);}
+.tc-ico{width:48px;height:48px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tc-ico svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.tc-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.4px;color:#fff;line-height:1.3;}
+.tc-title::after{content:'';display:block;width:40px;height:2px;background:var(--blue-lt);margin-top:7px;}
+.tc-desc{font-size:14px;color:rgba(255,255,255,.75);line-height:1.65;}
+
+/* WHY CHOOSE US */
+#why-choose-us{background:#fff;}
+.wc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;}
+.wc-left{padding-right:64px;display:flex;flex-direction:column;justify-content:center;}
+.wc-right{position:relative;min-height:520px;overflow:hidden;}
+.wc-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;display:block;
+  border-top:5px solid var(--blue);
+}
+.wc-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(26,86,176,.18) 0%,rgba(6,21,48,.08) 100%);
+  pointer-events:none;
+}
+.wc-cards{display:flex;flex-direction:column;gap:0;margin-top:32px;}
+.wc-card{
+  display:flex;align-items:flex-start;gap:18px;
+  padding:20px 22px;
+  border-left:4px solid var(--blue);
+  background:var(--offwhite);
+  border-bottom:2px solid #fff;
+  transition:background .22s,transform .18s;
+  cursor:default;
+}
+.wc-card:hover{background:var(--gray);transform:translateX(5px);}
+.wc-card-ico{
+  width:46px;height:46px;background:var(--blue);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:background .2s;
+}
+.wc-card:hover .wc-card-ico{background:var(--blue2);}
+.wc-card-ico svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.wc-card-body{}
+.wc-card-title{
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--dark);margin-bottom:5px;
+}
+.wc-card-desc{font-size:14.5px;color:#1e3a5f;line-height:1.68;}
+
+/* APPROACH */
+#approach{background:var(--dark2);}
+.ap-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;}
+.ap-left{padding-right:64px;}
+.ap-right{position:relative;min-height:460px;overflow:hidden;}
+.ap-right-bg{
+  position:absolute;inset:0;
+  background:url('walk.jpeg') center/cover no-repeat;
+  width:100%;height:100%;
+}
+.ap-ov{
+  position:absolute;inset:0;background:rgba(6,21,48,.78);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:38px;width:100%;height:100%;
+}
+.sl-lnk{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 0;border-bottom:1px solid rgba(255,255,255,.15);
+  cursor:pointer;transition:opacity .2s;
+}
+.sl-lnk:last-child{border-bottom:none;}
+.sl-lnk:hover{opacity:.74;}
+.sl-ico{width:40px;height:40px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sl-ico svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.sl-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:#fff;}
+.sl-lbl::after{content:'';display:block;width:100%;height:2px;background:var(--blue-lt);margin-top:4px;}
+
+/* TEAM */
+#team{background:var(--blue);}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;}
+.co-left{padding-right:64px;}
+.co-right{
+  position:relative;
+  background:url('center.png') center/cover no-repeat;
+  min-height:440px;
+}
+.co-ov{position:absolute;inset:0;background:rgba(6,21,48,.78);display:flex;flex-direction:column;justify-content:flex-end;padding:38px;}
+.co-svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:28px;}
+.co-svc{
+  display:flex;align-items:center;gap:10px;padding:15px 18px;
+  background:rgba(6,21,48,.18);border-left:4px solid rgba(255,255,255,.55);
+  border-bottom:1px solid rgba(6,21,48,.14);
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;
+  text-transform:uppercase;letter-spacing:.4px;color:#fff;
+}
+.co-svc svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.co-plbl{font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.65);margin-bottom:14px;}
+.partner-row{display:flex;gap:12px;flex-wrap:wrap;}
+.pbadge{background:rgba(255,255,255,.16);color:#fff;padding:10px 20px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;letter-spacing:.4px;border:1px solid rgba(255,255,255,.3);}
+
+/* LOCATIONS */
+#locations{background:#fff;}
+.lo-single{max-width:600px;margin:48px auto 0;}
+.lo-card{border-top:4px solid var(--blue);overflow:hidden;display:flex;flex-direction:column;}
+.lo-img{width:100%;height:210px;object-fit:cover;display:block;}
+.lo-body{padding:28px;background:var(--dark);flex:1;}
+.lo-name{font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:#fff;}
+.lo-name::after{content:'';display:block;width:40px;height:2px;background:var(--blue-lt);margin-top:7px;}
+.lo-addr{font-size:14px;color:rgba(255,255,255,.80);line-height:1.7;margin-top:14px;}
+.lo-ph{display:flex;align-items:center;gap:8px;font-size:15px;color:#7ec8f8;font-weight:700;font-family:'Montserrat',sans-serif;margin-top:12px;transition:opacity .2s;}
+.lo-ph:hover{opacity:.78;}
+.lo-ph svg{width:16px;height:16px;fill:none;stroke:#7ec8f8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+
+/* MAPS SECTION */
+#maps{background:var(--offwhite);padding:64px 0 96px;}
+.map-single{max-width:700px;margin:40px auto 0;}
+.map-card{background:#fff;border-top:4px solid var(--blue);overflow:hidden;box-shadow:0 4px 20px rgba(26,86,176,.12);}
+.map-label{background:var(--dark);padding:13px 18px;display:flex;align-items:center;gap:10px;}
+.map-label-ico{width:26px;height:26px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.map-label-ico svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.map-label-txt{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:#fff;text-transform:uppercase;letter-spacing:.5px;}
+.map-wrap{position:relative;width:100%;height:300px;overflow:hidden;}
+.map-wrap iframe{width:100%;height:calc(100% + 34px);margin-top:-2px;border:none;display:block;pointer-events:auto;}
+.map-touch-block{display:none;position:absolute;inset:0;z-index:3;background:transparent;cursor:pointer;}
+.map-wrap.active .map-touch-block{display:none !important;}
+.map-dir{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--blue);color:#fff;padding:13px 18px;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;
+  text-transform:uppercase;letter-spacing:.8px;
+  transition:background .2s;width:100%;text-decoration:none;
+}
+.map-dir:hover{background:var(--blue2);}
+.map-dir svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--dark);}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;}
+.test-card{
+  padding:32px 28px;border-left:4px solid var(--blue-lt);
+  background:rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  border-right:1px solid rgba(255,255,255,.06);
+}
+.test-stars{display:flex;gap:4px;margin-bottom:16px;}
+.test-star{color:#7ec8f8;font-size:16px;}
+.test-text{font-family:'Playfair Display',serif;font-style:italic;font-size:17px;line-height:1.8;color:rgba(255,255,255,.92);margin-bottom:18px;}
+.test-author{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#7ec8f8;}
+
+/* FAQ */
+#faq{background:var(--offwhite);}
+.faq-list{max-width:860px;margin:0 auto;margin-top:48px;}
+.faq-item{background:#fff;border-left:4px solid var(--blue);margin-bottom:4px;overflow:hidden;}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:22px 26px;cursor:pointer;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;
+  color:var(--dark);letter-spacing:.3px;transition:background .2s;user-select:none;
+}
+.faq-q:hover{background:rgba(26,86,176,.06);}
+.faq-q.open{background:rgba(26,86,176,.08);color:var(--blue);}
+.faq-icon{
+  width:32px;height:32px;background:var(--blue);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;transition:transform .3s;
+}
+.faq-icon svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;}
+.faq-q.open .faq-icon{transform:rotate(45deg);background:var(--dark);}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s ease;
+  padding:0 26px;font-size:16px;line-height:1.85;color:#1e3a5f;
+}
+.faq-a.open{max-height:400px;padding:4px 26px 22px;}
+
+/* BOOKING */
+#booking{background:var(--dark2);}
+.bk-grid{display:grid;grid-template-columns:360px 1fr;gap:0;margin-top:48px;}
+.bk-l{background:var(--dark);padding:48px 40px;}
+.bk-r{background:var(--blue);padding:48px 48px;}
+.bk-ht{font-family:'Playfair Display',serif;font-weight:700;font-size:22px;color:#fff;margin-bottom:6px;}
+.bk-hs{font-size:14px;color:rgba(255,255,255,.70);line-height:1.7;margin-bottom:26px;}
+.ci{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12);}
+.ci:last-child{border:none;}
+.ci-i{width:38px;height:38px;background:rgba(126,200,248,.14);border:1px solid rgba(126,200,248,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ci-i svg{width:18px;height:18px;fill:none;stroke:#7ec8f8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.ci-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#fff;}
+.ci-val{font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.65;margin-top:3px;}
+.bk-ft{font-family:'Playfair Display',serif;font-weight:700;font-size:22px;color:#fff;margin-bottom:6px;}
+.bk-fs{font-size:13.5px;color:rgba(255,255,255,.82);margin-bottom:24px;line-height:1.6;}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.fr.s{grid-template-columns:1fr;}
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.fg label{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#fff;}
+.fg input,.fg select,.fg textarea{
+  background:rgba(255,255,255,.14);border:none;border-bottom:2px solid rgba(255,255,255,.35);
+  padding:12px 14px;font-family:'Open Sans',sans-serif;font-size:14.5px;
+  color:#fff;outline:none;transition:border-color .2s;
+  width:100%;-webkit-appearance:none;border-radius:0;
+}
+.fg select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ffffff' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer;
+}
+.fg select option{background:var(--blue2);color:#fff;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#fff;}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.45);}
+.form-note{font-size:13px;color:rgba(255,255,255,.78);margin-bottom:16px;line-height:1.65;}
+.submit-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.btn-sub{
+  width:100%;color:#fff;padding:17px;border:none;cursor:pointer;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;
+  text-transform:uppercase;letter-spacing:1px;transition:background .2s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn-sub.wa{background:#25D366;}
+.btn-sub.wa:hover{background:#1da851;}
+.btn-sub.em{background:var(--dark);}
+.btn-sub.em:hover{background:var(--dark2);}
+.btn-sub svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.fs-box{display:none;text-align:center;padding:52px 24px;}
+.fs-ico{width:70px;height:70px;background:var(--dark);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;}
+.fs-ico svg{width:34px;height:34px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.fs-box h3{font-family:'Playfair Display',serif;font-weight:800;font-size:26px;color:#fff;margin-bottom:10px;}
+.fs-box p{font-size:15px;color:rgba(255,255,255,.82);line-height:1.75;}
+
+/* DATE PICKER */
+.date-input-wrap{position:relative;width:100%;}
+.date-display{
+  background:rgba(255,255,255,.14);border:none;border-bottom:2px solid rgba(255,255,255,.35);
+  padding:12px 14px;font-family:'Open Sans',sans-serif;font-size:14.5px;
+  color:#fff;width:100%;cursor:pointer;text-align:left;
+  display:flex;align-items:center;justify-content:space-between;transition:border-color .2s;
+}
+.date-display svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.cal-popup{
+  display:none;position:absolute;top:calc(100% + 6px);left:0;right:0;
+  background:#fff;z-index:500;box-shadow:0 12px 40px rgba(6,21,48,.28);
+  border:1px solid rgba(26,86,176,.18);min-width:300px;
+}
+.cal-popup.open{display:block;}
+.cal-header{background:var(--dark);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;}
+.cal-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:#fff;text-transform:uppercase;letter-spacing:.5px;}
+.cal-nav{background:none;border:none;cursor:pointer;width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;transition:background .2s;}
+.cal-nav:hover{background:rgba(255,255,255,.15);}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);background:var(--blue);}
+.cal-dow span{text-align:center;padding:8px 4px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:#fff;}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);padding:10px;gap:4px;}
+.cal-day{display:flex;align-items:center;justify-content:center;height:36px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;color:var(--dark);cursor:pointer;transition:background .15s,color .15s;position:relative;}
+.cal-day:hover:not(.empty):not(.disabled){background:rgba(26,86,176,.12);color:var(--blue);}
+.cal-day.today{color:var(--blue);font-weight:900;}
+.cal-day.today::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:var(--blue);border-radius:50%;}
+.cal-day.selected{background:var(--blue);color:#fff !important;}
+.cal-day.selected::after{display:none;}
+.cal-day.disabled{color:rgba(10,31,62,.25);cursor:not-allowed;}
+.cal-day.empty{cursor:default;}
+.cal-footer{border-top:1px solid rgba(10,31,62,.1);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;}
+.cal-today-btn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--blue);background:none;border:none;cursor:pointer;padding:4px 0;}
+.cal-clear-btn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(10,31,62,.38);background:none;border:none;cursor:pointer;padding:4px 0;}
+
+/* FOOTER */
+footer{background:var(--dark);padding:70px 0 28px;}
+.ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px;}
+.ft-logo img{height:62px;width:auto;object-fit:contain;}
+.ft-brand p{font-size:14px;line-height:1.85;color:rgba(255,255,255,.65);margin-top:16px;max-width:260px;}
+.ft-col-t{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.ft-ci{width:34px;height:34px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ft-ci svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.ft-cn{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:#fff;}
+.ft-cn::after{content:'';display:block;width:100%;height:2px;background:linear-gradient(to right,var(--blue),var(--blue-lt));margin-top:4px;}
+.ft-ul{list-style:none;}
+.ft-ul li{padding-left:12px;border-left:2px solid rgba(255,255,255,.08);margin-bottom:9px;}
+.ft-ul a{color:rgba(255,255,255,.70);font-size:14px;transition:color .2s;}
+.ft-ul a:hover{color:#7ec8f8;}
+.ft-social{display:flex;gap:10px;margin-top:18px;}
+.ft-soc-link{width:38px;height:38px;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;transition:background .2s;border:1px solid rgba(255,255,255,.14);}
+.ft-soc-link:hover{background:var(--blue);}
+.ft-soc-link svg{width:18px;height:18px;fill:#fff;}
+.ft-bot{border-top:1px solid rgba(255,255,255,.09);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-bot-t{font-size:13px;color:rgba(255,255,255,.50);}
+.ft-bot-b{font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:#7ec8f8;}
+
+/* MODAL */
+.mo{display:none;position:fixed;inset:0;background:rgba(6,21,48,.93);z-index:1000;overflow-y:auto;padding:40px 20px;}
+.mo.open{display:block;}
+.mb{background:#fff;max-width:900px;margin:0 auto;position:relative;animation:msl .3s ease;}
+@keyframes msl{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+.mb-img{width:100%;height:300px;object-fit:cover;display:block;}
+.mc{position:absolute;top:14px;right:14px;width:42px;height:42px;background:var(--dark);color:#fff;border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;}
+.mi{padding:44px 48px 52px;}
+.mi .st{font-size:28px;}
+.m-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:28px;}
+.mct{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--dark);padding-bottom:10px;border-bottom:2px solid var(--blue);margin-bottom:14px;}
+.mul{list-style:none;}
+.mul li{padding:8px 0 8px 18px;position:relative;font-size:15px;color:#1e3a5f;line-height:1.6;border-bottom:1px solid #e8f0ff;}
+.mul li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;background:var(--blue);}
+
+/* Unique Google Button Style */
+.gx-btn-wrapper{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 22px;
+  background:#1a73e8;
+  color:#fff;
+  text-decoration:none;
+  border-radius:10px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:0.3px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.15);
+  transition:all .25s ease;
+}
+.gx-btn-wrapper:hover{
+  background:#1666c1;
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.2);
+}
+.gx-btn-wrapper:active{
+  transform:translateY(0);
+  box-shadow:0 3px 10px rgba(0,0,0,0.15);
+}
+.gx-btn-icon{display:flex;align-items:center;justify-content:center;}
+.gx-btn-text{display:inline-block;}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .tg{grid-template-columns:repeat(3,1fr);}
+  .ft-top{grid-template-columns:1fr 1fr;gap:36px;}
+  .bk-grid{grid-template-columns:1fr;}
+  .bk-l,.bk-r{padding:44px 36px;}
+  .st{font-size:30px;}
+  .test-grid{grid-template-columns:1fr 1fr;}
+  .wc-grid{grid-template-columns:1fr;}
+  .wc-left{padding-right:0;}
+  .wc-right{min-height:340px;}
+}
+@media(max-width:900px){
+  body { 
+    padding-top: 104px; 
   }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--font-body);
-    background: var(--cream);
-    color: var(--text-dark);
-    overflow-x: hidden;
-    line-height: 1.6;
+  
+  .top-bar {
+    padding: 8px 0;
   }
-
-  /* ── SCROLLBAR ── */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--navy); }
-  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
-
-  /* ── ANNOUNCEMENT BAR ── */
-  .announce-bar {
-    background: var(--navy);
-    color: var(--gold-light);
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 12px;
-    font-family: var(--font-body);
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+  
+  .top-bar .ct {
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
-
-  /* ── NAV ── */
+  
+  .top-contact-item {
+    font-size: 13px;
+  }
+  
   nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-    transition: var(--transition);
+    top: 58px;
+    height: 60px;
+    padding: 0 20px;
+    background: var(--dark);
+    box-shadow: 0 2px 16px rgba(0,0,0,.3);
   }
-
-  .nav-inner {
-    max-width: 1320px;
-    margin: 0 auto;
+  
+  .logo-pill {
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .logo-pill img {
+    height: 45px;
+    max-width: 160px;
+  }
+  
+  .nav-links, .nav-book {
+    display: none !important;
+  }
+  
+  .ham {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 32px;
-    height: 72px;
   }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
+  
+  .ham span {
+    background: #fff;
   }
-
-  .nav-logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
+  
+  .mob-nav {
+    top: 118px;
   }
-
-  .logo-main {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--navy);
-    letter-spacing: 0.5px;
+  
+  #hero {
+    padding-top: 0;
   }
-
-  .logo-sub {
-    font-family: var(--font-body);
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--gold);
-    letter-spacing: 3px;
-    text-transform: uppercase;
+  
+  .hero-wrap {
+    grid-template-columns: 1fr;
+    padding: 40px 22px 52px;
+    gap: 0;
   }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
+  
+  .hero-quick {
+    display: none;
+  }
+  
+  .hero-mob-cards {
+    display: block;
+  }
+  
+  .hero-h1 {
+    font-size: 40px;
+  }
+  
+  .hero-p {
+    font-size: 15.5px;
+    max-width: 100%;
+  }
+  
+  .ab-grid {
+    grid-template-columns: 1fr;
     gap: 36px;
-    list-style: none;
   }
-
-  .nav-links a {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-mid);
-    text-decoration: none;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: var(--transition);
-    position: relative;
+  
+  .ab-img {
+    height: 300px;
   }
-
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--gold);
-    transition: width 0.3s ease;
-  }
-
-  .nav-links a:hover { color: var(--navy); }
-  .nav-links a:hover::after { width: 100%; }
-
-  .nav-cta {
-    background: var(--navy);
-    color: var(--gold-light) !important;
-    padding: 10px 22px;
-    border-radius: 2px;
-    letter-spacing: 1.5px;
-    transition: var(--transition) !important;
-  }
-  .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; }
-  .nav-cta::after { display: none !important; }
-
-  .hamburger {
-    display: none;
+  
+  .ap-grid {
+    grid-template-columns: 1fr;
+    display: flex;
     flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 6px;
-    background: none;
-    border: none;
   }
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--navy);
-    transition: var(--transition);
+  
+  .ap-left {
+    padding-right: 0;
+    order: 1;
   }
-
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: var(--navy);
-    z-index: 2000;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-  }
-
-  .mobile-menu.open { display: flex; }
-
-  .mobile-menu a {
-    font-family: var(--font-display);
-    font-size: 32px;
-    color: var(--cream);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .mobile-menu a:hover { color: var(--gold); }
-
-  .menu-close {
-    position: absolute;
-    top: 24px;
-    right: 28px;
-    background: none;
-    border: none;
-    color: var(--cream);
-    font-size: 28px;
-    cursor: pointer;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: calc(100vh - 108px);
-    background: var(--navy);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    overflow: hidden;
+  
+  .ap-right {
+    order: 2;
+    min-height: 380px;
+    height: 380px;
     position: relative;
+    flex-shrink: 0;
   }
-
-  .hero::before {
-    content: '';
+  
+  .ap-right-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-content {
-    padding: 80px 60px 80px 80px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 8px 18px;
-    margin-bottom: 32px;
-  }
-
-  .hero-badge span {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--gold-light);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .hero-badge i {
-    color: var(--gold);
-    font-size: 10px;
-  }
-
-  .hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(48px, 5.5vw, 78px);
-    font-weight: 300;
-    color: var(--cream);
-    line-height: 1.05;
-    margin-bottom: 24px;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold-light);
-    display: block;
-  }
-
-  .hero-desc {
-    font-size: 15px;
-    color: var(--text-light);
-    line-height: 1.8;
-    max-width: 440px;
-    margin-bottom: 44px;
-    font-weight: 300;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 56px;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--gold);
-    color: var(--navy);
-    padding: 16px 36px;
-    border-radius: 2px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: var(--transition);
-    border: 2px solid var(--gold);
-  }
-
-  .btn-primary:hover {
-    background: transparent;
-    color: var(--gold-light);
-  }
-
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: transparent;
-    color: var(--cream);
-    padding: 16px 36px;
-    border-radius: 2px;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.25);
-    transition: var(--transition);
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--gold);
-    color: var(--gold-light);
-  }
-
-  .hero-stats {
-    display: flex;
-    gap: 40px;
-    padding-top: 32px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .stat-item { text-align: left; }
-  .stat-num {
-    font-family: var(--font-display);
-    font-size: 32px;
-    font-weight: 500;
-    color: var(--gold-light);
-    line-height: 1;
-    display: block;
-  }
-  .stat-label {
-    font-size: 11px;
-    color: var(--text-light);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-top: 4px;
-    display: block;
-  }
-
-  .hero-visual {
-    position: relative;
-    height: 100%;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 3px;
     width: 100%;
     height: 100%;
+  }
+  
+  .ap-ov {
     position: absolute;
     inset: 0;
-  }
-
-  .hero-grid-item {
-    overflow: hidden;
-    position: relative;
-  }
-
-  .hero-grid-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
-    transform: scale(1.05);
-    transition: transform 0.8s ease;
-    filter: brightness(0.75) saturate(0.9);
-  }
-
-  .hero-grid-item:hover img { transform: scale(1.0); filter: brightness(0.85) saturate(1); }
-
-  .hero-overlay-card {
-    position: absolute;
-    bottom: 32px;
-    right: 32px;
-    background: rgba(13,27,42,0.92);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 20px 24px;
-    z-index: 10;
-    min-width: 200px;
-  }
-
-  .overlay-card-title {
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .overlay-card-text {
-    font-family: var(--font-display);
-    font-size: 18px;
-    color: var(--cream);
-    font-weight: 400;
-    font-style: italic;
-  }
-
-  .floating-badge {
-    position: absolute;
-    top: 32px;
-    right: 32px;
-    background: var(--gold);
-    color: var(--navy);
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 24px 22px;
     justify-content: center;
-    z-index: 10;
-    font-weight: 700;
-    font-size: 10px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1.3;
-    animation: pulse 3s ease-in-out infinite;
   }
-
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+  
+  .co-grid {
+    grid-template-columns: 1fr;
   }
-
-  /* ── SECTION STYLES ── */
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
+  
+  .co-left {
+    padding-right: 0;
   }
-
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--gold);
+  
+  .co-right {
+    min-height: 280px;
   }
-
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(32px, 4vw, 52px);
-    font-weight: 300;
-    line-height: 1.15;
-    color: var(--navy);
+  
+  .co-svc-grid {
+    grid-template-columns: 1fr;
   }
-
-  .section-title em {
-    font-style: italic;
-    color: var(--gold);
+  
+  .map-single {
+    max-width: 100%;
   }
-
-  /* ── BRANDS STRIP ── */
-  .brands-strip {
-    background: var(--navy);
-    padding: 24px 0;
-    overflow: hidden;
-  }
-
-  .brands-track {
+  
+  .map-touch-block {
     display: flex;
-    gap: 60px;
-    align-items: center;
-    animation: scroll-brands 25s linear infinite;
-    white-space: nowrap;
   }
-
-  @keyframes scroll-brands {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+  
+  .m-cols {
+    grid-template-columns: 1fr;
   }
-
-  .brand-name {
-    font-family: var(--font-display);
-    font-size: 16px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    user-select: none;
-    flex-shrink: 0;
-    transition: color 0.3s;
+  
+  .mi {
+    padding: 28px 28px 36px;
   }
-
-  .brand-dot {
-    width: 4px;
-    height: 4px;
-    background: var(--gold);
-    border-radius: 50%;
-    flex-shrink: 0;
+  
+  .mb-img {
+    height: 200px;
   }
-
-  /* ── PRODUCTS ── */
-  #shop {
-    padding: 100px 0;
-    background: var(--cream);
+  
+  .ct {
+    padding: 0 22px;
   }
-
-  .container {
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 0 32px;
+  
+  .sp {
+    padding: 68px 0;
   }
-
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 56px;
-    flex-wrap: wrap;
-    gap: 24px;
-  }
-
-  .section-header-left { max-width: 560px; }
-
-  .view-all-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--navy);
-    text-decoration: none;
-    border-bottom: 1px solid var(--gold);
-    padding-bottom: 2px;
-    transition: var(--transition);
-  }
-
-  .view-all-btn:hover { color: var(--gold); }
-
-  .filter-tabs {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 48px;
-    flex-wrap: wrap;
-  }
-
-  .filter-tab {
-    padding: 9px 22px;
-    border-radius: 100px;
-    border: 1px solid rgba(13,27,42,0.18);
-    background: transparent;
-    font-family: var(--font-body);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--text-mid);
-    cursor: pointer;
-    transition: var(--transition);
-  }
-
-  .filter-tab.active, .filter-tab:hover {
-    background: var(--navy);
-    color: var(--gold-light);
-    border-color: var(--navy);
-  }
-
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-
-  .product-card {
-    background: var(--white);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: var(--transition);
-    position: relative;
-    box-shadow: 0 2px 16px rgba(13,27,42,0.06);
-    cursor: pointer;
-  }
-
-  .product-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow);
-  }
-
-  .product-img-wrap {
-    aspect-ratio: 4/5;
-    overflow: hidden;
-    position: relative;
-    background: var(--cream-dark);
-  }
-
-  .product-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-  }
-
-  .product-card:hover .product-img-wrap img {
-    transform: scale(1.06);
-  }
-
-  .product-badge {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    background: var(--navy);
-    color: var(--gold-light);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 5px 10px;
-    border-radius: 2px;
-    z-index: 2;
-  }
-
-  .product-badge.new { background: var(--gold); color: var(--navy); }
-
-  .product-quick-add {
-    position: absolute;
-    bottom: -50px;
-    left: 0; right: 0;
-    background: var(--navy);
-    color: var(--gold-light);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 14px;
-    text-align: center;
-    transition: bottom 0.3s ease;
-    cursor: pointer;
-    border: none;
-    z-index: 3;
-  }
-
-  .product-card:hover .product-quick-add { bottom: 0; }
-
-  .product-info {
-    padding: 20px;
-  }
-
-  .product-brand {
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-
-  .product-name {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--navy);
-    line-height: 1.25;
-    margin-bottom: 6px;
-  }
-
-  .product-type {
-    font-size: 11px;
-    color: var(--text-light);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-
-  .product-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 14px;
-    border-top: 1px solid var(--cream-dark);
-  }
-
-  .product-price {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--navy);
-  }
-
-  .product-price span {
-    font-size: 13px;
-    color: var(--text-light);
-    font-weight: 300;
-    font-family: var(--font-body);
-  }
-
-  .product-wishlist {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid var(--cream-dark);
-    background: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition);
-    color: var(--text-light);
-    font-size: 14px;
-  }
-
-  .product-wishlist:hover {
-    background: var(--navy);
-    border-color: var(--navy);
-    color: var(--gold-light);
-  }
-
-  /* ── WHY CHOOSE US ── */
-  #why {
-    padding: 100px 0;
-    background: var(--navy);
-    position: relative;
-    overflow: hidden;
-  }
-
-  #why::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 500px; height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  #why .section-title { color: var(--cream); }
-  #why .section-label { color: var(--gold); }
-
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    margin-top: 64px;
-  }
-
-  .why-card {
-    background: var(--navy-light);
-    padding: 48px 40px;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(201,168,76,0.08);
-  }
-
-  .why-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 100%; height: 3px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-
-  .why-card:hover { background: var(--navy-mid); }
-  .why-card:hover::before { transform: scaleX(1); }
-
-  .why-icon {
-    width: 56px;
-    height: 56px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    font-size: 20px;
-    margin-bottom: 28px;
-    transition: var(--transition);
-  }
-
-  .why-card:hover .why-icon {
-    background: var(--gold);
-    color: var(--navy);
-    border-color: var(--gold);
-  }
-
-  .why-num {
-    font-family: var(--font-display);
-    font-size: 72px;
-    font-weight: 300;
-    color: rgba(201,168,76,0.08);
-    position: absolute;
-    top: 20px;
-    right: 24px;
-    line-height: 1;
-  }
-
-  .why-title {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--cream);
-    margin-bottom: 14px;
-    line-height: 1.25;
-  }
-
-  .why-desc {
-    font-size: 14px;
-    color: var(--text-light);
-    line-height: 1.8;
-    font-weight: 300;
-  }
-
-  /* ── ABOUT ── */
-  #about {
-    padding: 120px 0;
-    background: var(--cream);
-  }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .about-images {
-    position: relative;
-    height: 540px;
-  }
-
-  .about-img-main {
-    position: absolute;
-    top: 0; left: 0;
-    width: 72%;
-    height: 80%;
-    object-fit: cover;
-    border-radius: 4px;
-    box-shadow: var(--shadow);
-  }
-
-  .about-img-accent {
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 52%;
-    height: 55%;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 6px solid var(--cream);
-    box-shadow: var(--shadow);
-  }
-
-  .about-quote-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--navy);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 24px 28px;
-    min-width: 200px;
-    z-index: 10;
-    text-align: center;
-  }
-
-  .about-quote-box i {
-    color: var(--gold);
-    font-size: 24px;
-    margin-bottom: 8px;
-    display: block;
-  }
-
-  .about-quote-text {
-    font-family: var(--font-display);
-    font-size: 16px;
-    color: var(--cream);
-    font-style: italic;
-    line-height: 1.5;
-  }
-
-  .about-content { max-width: 520px; }
-
-  .about-body {
-    font-size: 15px;
-    color: var(--text-mid);
-    line-height: 1.9;
-    margin: 24px 0 40px;
-    font-weight: 300;
-  }
-
-  .about-highlights {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-
-  .highlight-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 13px;
-    color: var(--text-mid);
-  }
-
-  .highlight-item i {
-    color: var(--gold);
-    font-size: 14px;
-    flex-shrink: 0;
-  }
-
-  /* ── LOCATIONS ── */
-  #location {
-    padding: 100px 0;
-    background: var(--cream-dark);
-  }
-
-  .locations-grid {
-    display: grid;
+  
+  .ft-top {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
-    margin-top: 56px;
   }
-
-  .location-card {
-    background: var(--white);
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(13,27,42,0.07);
-    transition: var(--transition);
-    border: 1px solid rgba(201,168,76,0.12);
+  
+  .test-grid {
+    grid-template-columns: 1fr;
   }
-
-  .location-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-
-  .location-map-placeholder {
-    height: 220px;
-    background: var(--navy);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .location-map-placeholder::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(201,168,76,0.15) 0%, transparent 70%);
-  }
-
-  .map-pin {
-    color: var(--gold);
-    font-size: 40px;
-    position: relative;
-    z-index: 1;
-    animation: mapBounce 2.5s ease-in-out infinite;
-  }
-
-  @keyframes mapBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
-  .map-city {
-    font-family: var(--font-display);
-    font-size: 24px;
-    color: var(--cream);
-    font-weight: 300;
-    position: relative;
-    z-index: 1;
-    letter-spacing: 2px;
-  }
-
-  .location-info {
-    padding: 28px 32px;
-  }
-
-  .location-city-tag {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .location-address {
-    font-family: var(--font-display);
-    font-size: 20px;
-    color: var(--navy);
-    font-weight: 400;
-    line-height: 1.4;
-    margin-bottom: 16px;
-  }
-
-  .location-detail {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    color: var(--text-mid);
-    margin-bottom: 8px;
-  }
-
-  .location-detail i { color: var(--gold); font-size: 12px; }
-
-  .location-hours {
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid var(--cream-dark);
-    display: grid;
+  
+  .tg {
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
   }
-
-  .hours-item {
+  
+  .wc-right {
+    min-height: 280px;
+    height: 280px;
+  }
+}
+@media(max-width:620px){
+  body { 
+    padding-top: 98px; 
+  }
+  
+  .top-bar {
+    padding: 6px 0;
+  }
+  
+  .top-bar .ct {
+    padding: 0 16px;
+    gap: 4px;
+  }
+  
+  .top-contact-item {
     font-size: 12px;
-    color: var(--text-light);
-    letter-spacing: 0.5px;
   }
-
-  .hours-item strong {
-    display: block;
-    color: var(--navy);
-    font-weight: 500;
+  
+  .top-contact-item svg {
+    width: 14px;
+    height: 14px;
   }
-
-  /* ── CONTACT ── */
-  #contact {
-    padding: 100px 0;
-    background: var(--navy);
-    position: relative;
-    overflow: hidden;
+  
+  nav {
+    top: 52px;
+    height: 55px;
+    padding: 0 16px;
   }
-
-  #contact::after {
-    content: '';
-    position: absolute;
-    bottom: -100px; left: -100px;
-    width: 400px; height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
-    pointer-events: none;
+  
+  .logo-pill img {
+    height: 70px;
+    max-width: 190px;
   }
-
-  #contact .section-title { color: var(--cream); }
-  #contact .section-label { color: var(--gold); }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-    margin-top: 64px;
-    align-items: start;
+  
+  .mob-nav {
+    top: 107px;
   }
-
-  .contact-info-list { display: flex; flex-direction: column; gap: 32px; }
-
-  .contact-info-item {
-    display: flex;
-    gap: 20px;
+  
+  #hero {
+    padding-top: 0;
   }
-
-  .contact-icon-wrap {
-    width: 48px;
-    height: 48px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    font-size: 16px;
-    flex-shrink: 0;
+  
+  .hero-wrap {
+    padding: 28px 16px 44px;
   }
-
-  .contact-info-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-light);
-    margin-bottom: 6px;
+  
+  .hero-h1 {
+    font-size: 32px;
+    line-height: 1.08;
   }
-
-  .contact-info-value {
-    font-family: var(--font-display);
-    font-size: 18px;
-    color: var(--cream);
-    font-weight: 400;
+  
+  .hero-p {
+    font-size: 14.5px;
+    line-height: 1.8;
+    margin-bottom: 26px;
   }
-
-  .contact-info-value a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.2s;
+  
+  .hero-btns {
+    flex-direction: column;
+    gap: 10px;
   }
-
-  .contact-info-value a:hover { color: var(--gold-light); }
-
-  .contact-social {
-    display: flex;
-    gap: 12px;
-    margin-top: 40px;
+  
+  .hero-btns a {
+    text-align: center;
+    width: 100%;
+    padding: 14px;
   }
-
-  .social-link {
-    width: 44px;
-    height: 44px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-light);
+  
+  .fr {
+    grid-template-columns: 1fr;
+  }
+  
+  .ft-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  
+  .ft-bot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .tg {
+    grid-template-columns: 1fr;
+  }
+  
+  .sp {
+    padding: 52px 0;
+  }
+  
+  .bk-l, .bk-r {
+    padding: 32px 18px;
+  }
+  
+  .mi {
+    padding: 20px 18px 28px;
+  }
+  
+  .mi .st {
+    font-size: 22px;
+  }
+  
+  .st {
+    font-size: 24px;
+  }
+  
+  .sb {
     font-size: 15px;
-    text-decoration: none;
-    transition: var(--transition);
   }
-
-  .social-link:hover {
-    background: var(--gold);
-    color: var(--navy);
-    border-color: var(--gold);
-  }
-
-  /* ── CONTACT FORM ── */
-  .contact-form {
-    background: var(--navy-light);
-    border: 1px solid rgba(201,168,76,0.12);
-    border-radius: 4px;
-    padding: 48px;
-  }
-
-  .form-title {
-    font-family: var(--font-display);
-    font-size: 26px;
-    color: var(--cream);
-    font-weight: 400;
-    margin-bottom: 32px;
-  }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-  .form-group {
-    display: flex;
+  
+  .stats {
     flex-direction: column;
-    gap: 8px;
-    margin-bottom: 16px;
+    gap: 2px;
   }
-
-  .form-group label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--text-light);
+  
+  .ct {
+    padding: 0 16px;
   }
-
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 2px;
-    padding: 14px 18px;
-    font-family: var(--font-body);
-    font-size: 14px;
-    color: var(--cream);
-    transition: border-color 0.2s;
-    outline: none;
-    width: 100%;
+  
+  .submit-btns {
+    grid-template-columns: 1fr;
   }
-
-  .form-group select option { background: var(--navy-mid); color: var(--cream); }
-
-  .form-group input:focus,
-  .form-group textarea:focus,
-  .form-group select:focus {
-    border-color: var(--gold);
-    background: rgba(201,168,76,0.04);
-  }
-
-  .form-group textarea { resize: vertical; min-height: 100px; }
-
-  .form-group input::placeholder,
-  .form-group textarea::placeholder { color: rgba(138,154,176,0.5); }
-
-  .btn-submit {
-    width: 100%;
-    padding: 16px;
-    background: var(--gold);
-    color: var(--navy);
-    border: none;
-    border-radius: 2px;
-    font-family: var(--font-body);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .btn-submit:hover { background: var(--gold-light); }
-
-  /* ── FAQ ── */
-  #faq {
-    padding: 100px 0;
-    background: var(--cream);
-  }
-
-  .faq-grid {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 80px;
-    margin-top: 0;
-    align-items: start;
-  }
-
-  .faq-sidebar {
-    position: sticky;
-    top: 100px;
-  }
-
-  .faq-sidebar .section-label { margin-bottom: 16px; }
-  .faq-sidebar .section-title { margin-bottom: 24px; }
-
-  .faq-sidebar-desc {
-    font-size: 14px;
-    color: var(--text-mid);
-    line-height: 1.8;
-    margin-bottom: 32px;
-    font-weight: 300;
-  }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0; }
-
-  .faq-item {
-    border-bottom: 1px solid rgba(13,27,42,0.1);
-  }
-
-  .faq-question {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--navy);
-    gap: 16px;
-    transition: color 0.2s;
-  }
-
-  .faq-question:hover { color: var(--gold); }
-
-  .faq-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 1px solid rgba(13,27,42,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: var(--navy);
-    flex-shrink: 0;
-    transition: var(--transition);
-  }
-
-  .faq-item.open .faq-icon {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--navy);
-    transform: rotate(45deg);
-  }
-
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-  }
-
-  .faq-answer-inner {
-    padding: 0 0 24px;
-    font-size: 14px;
-    color: var(--text-mid);
-    line-height: 1.85;
-    font-weight: 300;
-  }
-
-  .faq-item.open .faq-answer { max-height: 300px; }
-
-  /* ── TESTIMONIALS ── */
-  #testimonials {
-    padding: 100px 0;
-    background: var(--cream-dark);
-    overflow: hidden;
-  }
-
-  .testimonials-track-wrap {
-    overflow: hidden;
-    margin-top: 56px;
-    position: relative;
-  }
-
-  .testimonials-track-wrap::before,
-  .testimonials-track-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 120px;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .testimonials-track-wrap::before {
-    left: 0;
-    background: linear-gradient(to right, var(--cream-dark), transparent);
-  }
-
-  .testimonials-track-wrap::after {
-    right: 0;
-    background: linear-gradient(to left, var(--cream-dark), transparent);
-  }
-
-  .testimonials-track {
-    display: flex;
-    gap: 24px;
-    animation: scroll-testimonials 32s linear infinite;
-  }
-
-  @keyframes scroll-testimonials {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  .testimonials-track:hover { animation-play-state: paused; }
-
-  .testimonial-card {
-    background: var(--white);
-    border-radius: 4px;
-    padding: 36px;
-    min-width: 320px;
-    max-width: 320px;
-    box-shadow: 0 4px 20px rgba(13,27,42,0.06);
-    border: 1px solid rgba(201,168,76,0.08);
-    flex-shrink: 0;
-  }
-
-  .testimonial-stars {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 16px;
-  }
-
-  .testimonial-stars i { color: var(--gold); font-size: 12px; }
-
-  .testimonial-text {
-    font-family: var(--font-display);
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--navy);
-    line-height: 1.6;
-    font-style: italic;
-    margin-bottom: 24px;
-  }
-
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .author-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-size: 16px;
-    color: var(--gold);
-    font-weight: 500;
-    flex-shrink: 0;
-  }
-
-  .author-name {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--navy);
-  }
-
-  .author-detail {
-    font-size: 11px;
-    color: var(--text-light);
-    letter-spacing: 0.5px;
-  }
-
-  /* ── MODAL ── */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(13,27,42,0.85);
-    backdrop-filter: blur(8px);
-    z-index: 3000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .modal-overlay.open { opacity: 1; pointer-events: all; }
-
-  .modal {
-    background: var(--white);
-    border-radius: 4px;
-    max-width: 800px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
-    position: relative;
-  }
-
-  .modal-overlay.open .modal { transform: translateY(0); }
-
-  .modal-close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: var(--navy);
-    border: none;
-    color: var(--cream);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    transition: var(--transition);
-  }
-
-  .modal-close:hover { background: var(--gold); color: var(--navy); }
-
-  .modal-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 460px;
-  }
-
-  .modal-img {
-    background: var(--cream-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .modal-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .modal-info {
-    padding: 48px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .modal-brand { font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-  .modal-name { font-family: var(--font-display); font-size: 28px; color: var(--navy); font-weight: 400; line-height: 1.2; margin-bottom: 8px; }
-  .modal-type { font-size: 12px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
-  .modal-desc { font-size: 14px; color: var(--text-mid); line-height: 1.8; font-weight: 300; margin-bottom: 24px; }
-
-  .modal-notes {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 28px;
-  }
-
-  .modal-note {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    color: var(--text-mid);
-  }
-
-  .modal-note i { color: var(--gold); font-size: 12px; }
-
-  .modal-price {
-    font-family: var(--font-display);
-    font-size: 36px;
-    color: var(--navy);
-    font-weight: 500;
-    margin-bottom: 24px;
-  }
-
-  .modal-actions {
-    display: flex;
-    gap: 12px;
-  }
-
-  .btn-order {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: var(--navy);
-    color: var(--gold-light);
-    padding: 15px 24px;
-    border-radius: 2px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: var(--transition);
-    border: 2px solid var(--navy);
-    cursor: pointer;
-  }
-
-  .btn-order:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
-
-  /* ── TOAST ── */
-  .toast {
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    background: var(--navy);
-    color: var(--cream);
-    padding: 16px 24px;
-    border-radius: 4px;
-    border-left: 4px solid var(--gold);
-    font-size: 14px;
-    z-index: 9999;
-    transform: translateY(100px);
-    opacity: 0;
-    transition: all 0.4s ease;
-    max-width: 320px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .toast.show { transform: translateY(0); opacity: 1; }
-  .toast i { color: var(--gold); font-size: 16px; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy);
-    border-top: 1px solid rgba(201,168,76,0.12);
-    padding: 80px 0 0;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 60px;
-    padding-bottom: 60px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .footer-brand .logo-main { color: var(--cream); font-size: 26px; margin-bottom: 4px; }
-  .footer-brand .logo-sub { color: var(--gold); }
-
-  .footer-brand-desc {
-    font-size: 13px;
-    color: var(--text-light);
-    line-height: 1.8;
-    margin: 20px 0 28px;
-    font-weight: 300;
-    max-width: 280px;
-  }
-
-  .footer-social {
-    display: flex;
-    gap: 10px;
-  }
-
-  .footer-col-title {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-  }
-
-  .footer-links { display: flex; flex-direction: column; gap: 12px; }
-
-  .footer-links a {
-    font-size: 14px;
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.2s;
-    font-weight: 300;
-  }
-
-  .footer-links a:hover { color: var(--cream); }
-
-  .footer-bottom {
-    padding: 24px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .footer-copyright {
-    font-size: 12px;
-    color: var(--text-light);
-    font-weight: 300;
-  }
-
-  .footer-copyright span { color: var(--gold); }
-
-  .footer-legal {
-    display: flex;
-    gap: 24px;
-  }
-
-  .footer-legal a {
-    font-size: 12px;
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .footer-legal a:hover { color: var(--cream); }
-
-  /* ── WHATSAPP FAB ── */
-  .whatsapp-fab {
-    position: fixed;
-    bottom: 32px;
-    left: 32px;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: #25d366;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    text-decoration: none;
-    z-index: 999;
-    box-shadow: 0 8px 32px rgba(37,211,102,0.35);
-    transition: var(--transition);
-    animation: fabPulse 3s ease-in-out infinite;
-  }
-
-  @keyframes fabPulse {
-    0%, 100% { box-shadow: 0 8px 32px rgba(37,211,102,0.35); }
-    50% { box-shadow: 0 8px 48px rgba(37,211,102,0.55); }
-  }
-
-  .whatsapp-fab:hover { transform: scale(1.12); }
-
-  .whatsapp-tooltip {
-    position: absolute;
-    left: 68px;
-    background: var(--navy);
-    color: var(--cream);
-    font-size: 12px;
-    padding: 8px 14px;
-    border-radius: 4px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-    font-family: var(--font-body);
-    font-weight: 500;
-  }
-
-  .whatsapp-fab:hover .whatsapp-tooltip { opacity: 1; }
-
-  /* ── BACK TO TOP ── */
-  .back-to-top {
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    width: 48px;
-    height: 48px;
-    background: var(--navy);
-    color: var(--gold-light);
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    cursor: pointer;
-    z-index: 998;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: var(--transition);
-    text-decoration: none;
-  }
-
-  .back-to-top.visible { opacity: 1; transform: translateY(0); }
-  .back-to-top:hover { background: var(--gold); color: var(--navy); }
-
-  /* ── ANIMATIONS ── */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 1100px) {
-    .products-grid { grid-template-columns: repeat(3, 1fr); }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-  }
-
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-content { padding: 60px 32px; text-align: center; }
-    .hero-desc { margin: 0 auto 40px; }
-    .hero-buttons { justify-content: center; }
-    .hero-stats { justify-content: center; }
-    .hero-visual { min-height: 360px; }
-    .hero-overlay-card { display: none; }
-    .about-grid { grid-template-columns: 1fr; }
-    .about-images { height: 360px; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .faq-grid { grid-template-columns: 1fr; }
-    .faq-sidebar { position: static; }
-    .locations-grid { grid-template-columns: 1fr; }
-    .why-grid { grid-template-columns: 1fr; }
-    .modal-body { grid-template-columns: 1fr; }
-    .modal-img { height: 280px; }
-  }
-
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .container { padding: 0 20px; }
-    .hero-content { padding: 48px 20px; }
-    .nav-inner { padding: 0 20px; }
-    .section-header { flex-direction: column; align-items: flex-start; }
-    .form-row { grid-template-columns: 1fr; }
-    .contact-form { padding: 32px 24px; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .footer-bottom { flex-direction: column; text-align: center; }
-    .hero-stats { gap: 24px; }
-    .about-highlights { grid-template-columns: 1fr; }
-  }
-
-  @media (max-width: 480px) {
-    .products-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-    .product-info { padding: 14px; }
-    .product-name { font-size: 15px; }
-    .product-price { font-size: 18px; }
-    .hero-buttons { flex-direction: column; align-items: center; }
-    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-    .filter-tabs { gap: 6px; }
-    .filter-tab { padding: 7px 16px; font-size: 11px; }
-  }
+}
 </style>
 </head>
 <body>
 
-<!-- ANNOUNCEMENT BAR -->
-<div class="announce-bar">
-  <i class="fas fa-shield-alt" style="margin-right:8px;"></i>
-  100% Original Perfumes · Free Delivery in Harare & Bulawayo · WhatsApp Orders Welcome
+<!-- TOP BAR - NEW SECTION WITH PHONE AND ADDRESS -->
+<div class="top-bar">
+  <div class="ct">
+    <div class="top-contact-item">
+      <svg viewBox="0 0 24 24">
+        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+      </svg>
+      <span>Phone: <strong>0773510223</strong></span>
+    </div>
+    <div class="top-contact-item">
+      <svg viewBox="0 0 24 24">
+        <path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+      </svg>
+      <span>Address: <strong>23 Clayton Road, Milton Park, Harare</strong></span>
+    </div>
+  </div>
 </div>
 
-<!-- NAV -->
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <div class="nav-logo-text">
-        <span class="logo-main">Fragrances Corner</span>
-        <span class="logo-sub">Original Perfumes · Zimbabwe</span>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#shop">Shop</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#location">Locations</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+<!-- NAV - RESTRUCTURED WITH PROPER LOGO POSITIONING -->
+<nav id="nav">
+  <div class="logo-pill">
+    <img src="crayooo-removebg-preview.png" alt="MedRehab">
   </div>
+  <ul class="nav-links" id="nl">
+    <li><a href="#hero" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#what-we-treat">Services</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#team">Our Team</a></li>
+    <li><a href="#locations">Location</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#booking" class="nav-book">Book Appointment</a>
+  <div class="ham" id="ham" onclick="tN()"><span></span><span></span><span></span></div>
 </nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="menu-close" id="menuClose"><i class="fas fa-times"></i></button>
-  <a href="#shop" onclick="closeMobileMenu()">Shop</a>
-  <a href="#about" onclick="closeMobileMenu()">About</a>
-  <a href="#location" onclick="closeMobileMenu()">Locations</a>
-  <a href="#testimonials" onclick="closeMobileMenu()">Reviews</a>
-  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+<div class="mob-nav" id="mn">
+  <a href="#hero"          onclick="cN()">Home</a>
+  <a href="#about"         onclick="cN()">About</a>
+  <a href="#what-we-treat" onclick="cN()">Services</a>
+  <a href="#approach"      onclick="cN()">Approach</a>
+  <a href="#team"          onclick="cN()">Our Team</a>
+  <a href="#locations"     onclick="cN()">Location</a>
+  <a href="#faq"           onclick="cN()">FAQ</a>
+  <a href="#booking" class="mob-book" onclick="cN()">Book Appointment</a>
 </div>
 
+<!-- The rest of your HTML sections remain exactly the same -->
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="hero-badge">
-      <i class="fas fa-certificate"></i>
-      <span>Zimbabwe's Finest Fragrance House</span>
-    </div>
-    <h1 class="hero-title">
-      Wear Your
-      <em>Signature</em>
-      Story
-    </h1>
-    <p class="hero-desc">Handpicked original perfumes from the world's most prestigious houses. Delivered to your door across Zimbabwe, with the expertise you deserve.</p>
-    <div class="hero-buttons">
-      <a href="#shop" class="btn-primary">
-        <i class="fas fa-shopping-bag"></i>
-        Explore Collection
-      </a>
-      <a href="https://wa.me/263774888597" target="_blank" class="btn-secondary">
-        <i class="fab fa-whatsapp"></i>
-        Order via WhatsApp
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-num">100%</span>
-        <span class="stat-label">Authentic</span>
+<section id="hero">
+  <div class="hero-wrap">
+    <div class="rv">
+      <div class="hero-tag">Rehabilitation &amp; Wellness · Harare, Zimbabwe</div>
+      <h1 class="hero-h1">Quality Care for a<br><em>Better Quality</em><br>of Life.</h1>
+      <p class="hero-p">Comprehensive rehabilitation services — physiotherapy, occupational therapy, and speech therapy — delivered by expert clinicians in Harare.</p>
+      <div class="hero-btns">
+        <a href="#booking"       class="btn-blue">Book a Consultation</a>
+        <a href="#what-we-treat" class="btn-ghost">Our Services</a>
       </div>
-      <div class="stat-item">
-        <span class="stat-num">50+</span>
-        <span class="stat-label">Brands</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">2</span>
-        <span class="stat-label">Locations</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">1K+</span>
-        <span class="stat-label">Happy Clients</span>
+      <div class="hero-mob-cards">
+        <div class="hmc-grid">
+          <a href="#what-we-treat" class="hmc" onclick="cN()">
+            <div class="hmc-ico"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+            <div class="hmc-lbl">What We Treat</div>
+          </a>
+          <a href="#booking" class="hmc">
+            <div class="hmc-ico"><svg viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+            <div class="hmc-lbl">Book Appointment</div>
+          </a>
+          <a href="#locations" class="hmc">
+            <div class="hmc-ico"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+            <div class="hmc-lbl">Our Location</div>
+          </a>
+          <a href="#team" class="hmc">
+            <div class="hmc-ico"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+            <div class="hmc-lbl">Our Team</div>
+          </a>
+          <a href="#booking" class="hmc">
+            <div class="hmc-ico"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+            <div class="hmc-lbl">Contact Us</div>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="hero-visual">
-    <div class="hero-grid">
-      <div class="hero-grid-item">
-        <img src="gucci.jpeg" alt="Luxury perfume">
-      </div>
-      <div class="hero-grid-item">
-        <img src="paradoxintense.jpeg" alt="Perfume bottles">
-      </div>
-      <div class="hero-grid-item">
-        <img src="la viste.jpeg" alt="Fragrance collection">
-      </div>
-      <div class="hero-grid-item">
-        <img src="laviste.jpeg" alt="Premium perfumes">
-      </div>
-    </div>
-    <div class="floating-badge">100%<br>Original</div>
-    <div class="hero-overlay-card">
-      <div class="overlay-card-title">New Arrivals</div>
-      <div class="overlay-card-text">Paradoxe Prada<br>& More →</div>
+    <div class="hero-quick">
+      <a href="#what-we-treat" class="hq"><div class="hq-ico"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div><div class="hq-lbl">What We Treat</div></a>
+      <a href="#locations"     class="hq"><div class="hq-ico"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div class="hq-lbl">Our Location</div></a>
+      <a href="#team"          class="hq"><div class="hq-ico"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div class="hq-lbl">Meet Our Team</div></a>
+      <a href="#booking"       class="hq"><div class="hq-ico"><svg viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div><div class="hq-lbl">Book Appointment</div></a>
+      <a href="#booking"       class="hq"><div class="hq-ico"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div><div class="hq-lbl">Contact Details</div></a>
     </div>
   </div>
 </section>
 
-<!-- BRANDS STRIP -->
-<div class="brands-strip">
-  <div class="brands-track" id="brandsTrack">
-    <span class="brand-name">Tom Ford</span><span class="brand-dot"></span>
-    <span class="brand-name">Lancôme</span><span class="brand-dot"></span>
-    <span class="brand-name">Versace</span><span class="brand-dot"></span>
-    <span class="brand-name">Burberry</span><span class="brand-dot"></span>
-    <span class="brand-name">Prada</span><span class="brand-dot"></span>
-    <span class="brand-name">Jimmy Choo</span><span class="brand-dot"></span>
-    <span class="brand-name">D&G</span><span class="brand-dot"></span>
-    <span class="brand-name">Giorgio Armani</span><span class="brand-dot"></span>
-    <span class="brand-name">Creed</span><span class="brand-dot"></span>
-    <span class="brand-name">YSL</span><span class="brand-dot"></span>
-    <span class="brand-name">Gucci</span><span class="brand-dot"></span>
-    <span class="brand-name">Hermès</span><span class="brand-dot"></span>
-    <span class="brand-name">Bvlgari</span><span class="brand-dot"></span>
-    <span class="brand-name">Emporio Armani</span><span class="brand-dot"></span>
-    <span class="brand-name">Parfums de Marly</span><span class="brand-dot"></span>
-    <!-- duplicate -->
-    <span class="brand-name">Tom Ford</span><span class="brand-dot"></span>
-    <span class="brand-name">Lancôme</span><span class="brand-dot"></span>
-    <span class="brand-name">Versace</span><span class="brand-dot"></span>
-    <span class="brand-name">Burberry</span><span class="brand-dot"></span>
-    <span class="brand-name">Prada</span><span class="brand-dot"></span>
-    <span class="brand-name">Jimmy Choo</span><span class="brand-dot"></span>
-    <span class="brand-name">D&G</span><span class="brand-dot"></span>
-    <span class="brand-name">Giorgio Armani</span><span class="brand-dot"></span>
-    <span class="brand-name">Creed</span><span class="brand-dot"></span>
-    <span class="brand-name">YSL</span><span class="brand-dot"></span>
-    <span class="brand-name">Gucci</span><span class="brand-dot"></span>
-    <span class="brand-name">Hermès</span><span class="brand-dot"></span>
-    <span class="brand-name">Bvlgari</span><span class="brand-dot"></span>
-    <span class="brand-name">Emporio Armani</span><span class="brand-dot"></span>
-    <span class="brand-name">Parfums de Marly</span><span class="brand-dot"></span>
-  </div>
-</div>
-
-<!-- SHOP -->
-<section id="shop">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-header-left fade-up">
-        <span class="section-label">Our Collection</span>
-        <h2 class="section-title">Curated for <em>Distinction</em></h2>
-      </div>
-      <a href="https://wa.me/263774888597?text=Hello%20Fragrances%20Corner%2C%20I%20would%20like%20to%20enquire%20about%20your%20collection." target="_blank" class="view-all-btn fade-up">
-        Request Catalogue <i class="fas fa-arrow-right" style="font-size:11px;"></i>
-      </a>
+<!-- Continue with your remaining sections exactly as they were -->
+<!-- ABOUT -->
+<section id="about" class="sp"><div class="ct"><div class="ab-grid rv">
+<img src="about.jpeg" alt="MedRehab – Harare" class="ab-img" loading="lazy">
+  <div>
+    <div class="ey"><div class="si p"><svg viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div><div class="st">About MedRehab</div></div>
+    <div class="ul"></div>
+    <p class="sb"><strong>MedRehab</strong> is a premier multidisciplinary rehabilitation clinic dedicated to restoring function, independence, and quality of life for patients of all ages across Harare, Zimbabwe.</p>
+    <p class="sb" style="margin-top:13px;">Our team of highly qualified clinicians provides evidence-based rehabilitation in physiotherapy, occupational therapy, and speech therapy — serving adults, children, elderly patients, athletes, and post-surgical clients.</p>
+    <p class="sb" style="margin-top:13px;">We are located at 23 Clayton Road, Milton Park, Harare, and are proud to also operate under the Weale Road Clinic (MedRehab) branch. We are a registered with  <strong>Health Professions Authority</strong> and fully compliant medical centre.</p>
+    <div class="stats">
+      <div class="stat"><div class="sn">5.0★</div><div class="sl2">Google Rating</div></div>
+      <div class="stat"><div class="sn">3+</div><div class="sl2">Disciplines</div></div>
+      <div class="stat"><div class="sn">ZRA</div><div class="sl2">Tax Cleared</div></div>
     </div>
-
-    <div class="filter-tabs fade-up">
-      <button class="filter-tab active" onclick="filterProducts('all', this)">All</button>
-      <button class="filter-tab" onclick="filterProducts('women', this)">For Her</button>
-      <button class="filter-tab" onclick="filterProducts('men', this)">For Him</button>
-      <button class="filter-tab" onclick="filterProducts('unisex', this)">Unisex</button>
-      <button class="filter-tab" onclick="filterProducts('niche', this)">Niche & Luxury</button>
-    </div>
-
-    <div class="products-grid" id="productsGrid"></div>
+    <a href="#what-we-treat" class="lk">Explore Our Services</a>
   </div>
-</section>
+</div></div></section>
+
+<!-- WHAT WE TREAT -->
+<section id="what-we-treat" class="sp"><div class="ct">
+  <div class="rv">
+    <div class="ey"><div class="si d"><svg viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><div class="st w">What We Treat</div></div>
+    <div class="ul"></div>
+    <p class="sb w" style="max-width:580px;margin-bottom:48px;">Click any category to discover conditions treated, our specialist approach, and how MedRehab can help you recover.</p>
+  </div>
+  <div class="tg">
+    <div class="tc rv" onclick="oM('physio')"><div class="tc-ico"><svg viewBox="0 0 24 24"><path d="M9 3v11.5a3.5 3.5 0 007 0V5a2 2 0 00-4 0v9.5a.5.5 0 001 0V6"/></svg></div><div class="tc-title">Physiotherapy</div><p class="tc-desc">Sports injuries, back &amp; neck pain, post-surgery recovery &amp; stroke rehabilitation.</p></div>
+    <div class="tc rv" onclick="oM('occ')"><div class="tc-ico"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div><div class="tc-title">Occupational Therapy</div><p class="tc-desc">Restoring daily living skills, fine motor function &amp; workplace independence.</p></div>
+    <div class="tc rv" onclick="oM('speech')"><div class="tc-ico"><svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div><div class="tc-title">Speech Therapy</div><p class="tc-desc">Communication disorders, swallowing difficulties &amp; language development.</p></div>
+    <div class="tc rv" onclick="oM('sports')"><div class="tc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l4.24 4.24m5.66 5.66l4.24 4.24M14.12 9.88l4.24-4.24M4.93 19.07l4.24-4.24"/></svg></div><div class="tc-title">Sports Injury Rehab</div><p class="tc-desc">ACL, hamstring, shoulder injuries — structured return-to-sport rehabilitation.</p></div>
+    <div class="tc rv" onclick="oM('neuro')"><div class="tc-ico"><svg viewBox="0 0 24 24"><path d="M21 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953l7.108-4.062A1.125 1.125 0 0121 8.689v8.122zM11.25 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953L9.567 7.71a1.125 1.125 0 011.683.977v8.123z"/></svg></div><div class="tc-title">Neurological Rehab</div><p class="tc-desc">Stroke, Parkinson's, spinal cord injuries — regaining balance &amp; independence.</p></div>
+    <div class="tc rv" onclick="oM('geriatric')"><div class="tc-ico"><svg viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div><div class="tc-title">Geriatric Physiotherapy</div><p class="tc-desc">Mobility, fall prevention &amp; pain management for elderly patients.</p></div>
+    <div class="tc rv" onclick="oM('postsurg')"><div class="tc-ico"><svg viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><div class="tc-title">Post-Surgical Rehab</div><p class="tc-desc">Guided recovery after orthopaedic, cardiac or general surgery procedures.</p></div>
+  </div>
+</div></section>
 
 <!-- WHY CHOOSE US -->
-<section id="why">
-  <div class="container">
-    <div style="text-align:center;" class="fade-up">
-      <span class="section-label">Why Fragrances Corner</span>
-      <h2 class="section-title" style="color:var(--cream);">The Standard We <em>Uphold</em></h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-card fade-up">
-        <div class="why-num">01</div>
-        <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
-        <div class="why-title">100% Authentic Originals</div>
-        <div class="why-desc">Every perfume we stock is sourced directly and verified for authenticity. We never compromise on quality — what you smell is exactly what you receive, sealed and genuine.</div>
+<section id="why-choose-us" class="sp">
+  <div class="ct">
+    <div class="wc-grid rv">
+      <div class="wc-left">
+        <div class="ey">
+          <div class="si p">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div class="st">Why Choose MedRehab?</div>
+        </div>
+        <div class="ul"></div>
+        <p class="sb" style="margin-bottom:6px;">We are more than a clinic — we are your dedicated rehabilitation partner. Here is what sets us apart in Harare and across Zimbabwe.</p>
+        <div class="wc-cards">
+          <div class="wc-card">
+            <div class="wc-card-ico">
+              <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div class="wc-card-body">
+              <div class="wc-card-title">Multidisciplinary Expert Team</div>
+              <div class="wc-card-desc">Registered physiotherapists, occupational therapists and speech therapists — all under one roof for seamless, integrated care.</div>
+            </div>
+          </div>
+          <div class="wc-card">
+            <div class="wc-card-ico">
+              <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+            </div>
+            <div class="wc-card-body">
+              <div class="wc-card-title">Personalised Treatment Plans</div>
+              <div class="wc-card-desc">No two patients are the same. Every treatment plan is individually designed around your specific condition, goals, and lifestyle — not a generic protocol.</div>
+            </div>
+          </div>
+          <div class="wc-card">
+            <div class="wc-card-ico">
+              <svg viewBox="0 0 24 24"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+            </div>
+            <div class="wc-card-body">
+              <div class="wc-card-title">5-Star Rated Patient Care</div>
+              <div class="wc-card-desc">We hold a perfect 5.0-star Google rating — a testament to our commitment to exceptional, compassionate, and results-driven patient care every single visit.</div>
+            </div>
+          </div>
+          <div class="wc-card">
+            <div class="wc-card-ico">
+              <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div class="wc-card-body">
+              <div class="wc-card-title">Conveniently Located in Milton Park</div>
+              <div class="wc-card-desc">Find us at 23 Clayton Road, Milton Park, Harare — easily accessible and centrally positioned for patients across the city.</div>
+            </div>
+          </div>
+          <div class="wc-card">
+            <div class="wc-card-ico">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div class="wc-card-body">
+              <div class="wc-card-title">ZRA Tax Cleared &amp; Fully Compliant</div>
+              <div class="wc-card-desc">MedRehab is a fully registered, ZRA Tax Cleared medical centre — ensuring all invoices are valid for medical aid submissions and tax purposes.</div>
+            </div>
+          </div>
+        </div>
+        <a href="#booking" class="lk" style="margin-top:28px;">Book Your Appointment Today</a>
       </div>
-      <div class="why-card fade-up">
-        <div class="why-num">02</div>
-        <div class="why-icon"><i class="fas fa-store"></i></div>
-        <div class="why-title">Two Physical Locations</div>
-        <div class="why-desc">Walk into our Harare or Bulawayo stores for a premium in-person experience. Smell before you buy — guided by our fragrance specialists who know every note.</div>
-      </div>
-      <div class="why-card fade-up">
-        <div class="why-num">03</div>
-        <div class="why-icon"><i class="fab fa-whatsapp"></i></div>
-        <div class="why-title">Instant WhatsApp Service</div>
-        <div class="why-desc">Order, enquire, or get a recommendation via WhatsApp in seconds. We're responsive and personal — because buying a fragrance should be an experience, not a transaction.</div>
-      </div>
-      <div class="why-card fade-up">
-        <div class="why-num">04</div>
-        <div class="why-icon"><i class="fas fa-truck"></i></div>
-        <div class="why-title">Nationwide Delivery</div>
-        <div class="why-desc">We deliver across Zimbabwe. Your luxury fragrance arrives carefully packaged and on time, whether you're in Harare, Bulawayo, Mutare, or anywhere in between.</div>
-      </div>
-      <div class="why-card fade-up">
-        <div class="why-num">05</div>
-        <div class="why-icon"><i class="fas fa-gem"></i></div>
-        <div class="why-title">Premium Gift Packaging</div>
-        <div class="why-desc">Every purchase arrives in our signature Fragrances Corner packaging — elegant, presentable, and gift-ready. Perfect for yourself or someone who deserves the finest.</div>
-      </div>
-      <div class="why-card fade-up">
-        <div class="why-num">06</div>
-        <div class="why-icon"><i class="fas fa-user-tie"></i></div>
-        <div class="why-title">Expert Fragrance Guidance</div>
-        <div class="why-desc">Not sure which scent to choose? Our team will match you with something that fits your personality, mood, and lifestyle. We treat every customer as a unique individual.</div>
+      <div class="wc-right">
+        <img src="baby.jpeg" alt="Why Choose MedRehab" class="wc-img" loading="lazy">
+        <div class="wc-img-overlay"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-images fade-up">
-        <img class="about-img-main" src="man.jpeg" alt="Fragrances Corner Store">
-        <img class="about-img-accent" src="mychoo.jpeg" alt="Perfume selection">
-        <div class="about-quote-box">
-          <i class="fas fa-quote-left"></i>
-          <div class="about-quote-text">"Don't just smell good,<br>smell unforgettable."</div>
-        </div>
-      </div>
-      <div class="about-content fade-up">
-        <span class="section-label">Our Story</span>
-        <h2 class="section-title">Born From a <em>Passion</em> for Fragrance</h2>
-        <p class="about-body">Fragrances Corner was built on a single conviction: every Zimbabwean deserves access to the world's finest perfumes, at fair prices, with total confidence in authenticity.<br><br>What started as a love for the art of scent has grown into Zimbabwe's most trusted fragrance destination — with two physical boutiques, thousands of satisfied customers, and a collection curated from the most prestigious houses on the planet.</p>
-        <div class="about-highlights">
-          <div class="highlight-item"><i class="fas fa-check-circle"></i> Genuine originals only</div>
-          <div class="highlight-item"><i class="fas fa-check-circle"></i> Curated from top houses</div>
-          <div class="highlight-item"><i class="fas fa-check-circle"></i> Harare & Bulawayo stores</div>
-          <div class="highlight-item"><i class="fas fa-check-circle"></i> 1,000+ happy customers</div>
-          <div class="highlight-item"><i class="fas fa-check-circle"></i> WhatsApp-first ordering</div>
-          <div class="highlight-item"><i class="fas fa-check-circle"></i> Expert scent guidance</div>
-        </div>
-        <a href="#contact" class="btn-primary" style="background:var(--navy);color:var(--gold-light);border-color:var(--navy);">
-          <i class="fas fa-envelope"></i>
-          Get in Touch
-        </a>
+<!-- APPROACH -->
+<section id="approach" class="sp"><div class="ct">
+  <div class="ap-grid rv">
+    <div class="ap-left">
+      <div class="ey"><div class="si d"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div><div class="st w">Our Approach to Care</div></div>
+      <div class="ul"></div>
+      <p class="sb w">At MedRehab, we believe in treating the whole person — not just the condition. Every patient receives a thorough multidisciplinary assessment to understand the root cause of their challenges, followed by a personalised, goal-oriented rehabilitation plan.</p>
+      <p class="sb w" style="margin-top:13px;">Our interdisciplinary team collaborates to deliver seamless care — physiotherapists, occupational therapists, and speech therapists working together to maximise your recovery outcomes.</p>
+      <a href="#booking" class="lk w">Book Your Assessment</a>
+    </div>
+    <div class="ap-right">
+      <div class="ap-right-bg"></div>
+      <div class="ap-ov">
+        <a href="#booking" class="sl-lnk"><div class="sl-ico"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg></div><div class="sl-lbl">Multidisciplinary Assessment</div></a>
+        <a href="#booking" class="sl-lnk"><div class="sl-ico"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><div class="sl-lbl">Personalised Treatment Plan</div></a>
+        <a href="#booking" class="sl-lnk"><div class="sl-ico"><svg viewBox="0 0 24 24"><path d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div><div class="sl-lbl">Ongoing Progress Monitoring</div></a>
+        <a href="#booking" class="sl-lnk"><div class="sl-ico"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><div class="sl-lbl">Return to Full Function</div></a>
       </div>
     </div>
   </div>
-</section>
+</div></section>
 
-<!-- LOCATIONS -->
-<section id="location">
-  <div class="container">
-    <div style="text-align:center;" class="fade-up">
-      <span class="section-label">Find Us</span>
-      <h2 class="section-title">Visit Our <em>Boutiques</em></h2>
-      <p style="color:var(--text-mid);margin-top:16px;font-size:15px;font-weight:300;max-width:480px;margin-left:auto;margin-right:auto;">Step in, experience the scents firsthand, and leave with something extraordinary.</p>
-    </div>
-    <div class="locations-grid">
-      <div class="location-card fade-up">
-        <div class="location-map-placeholder">
-          <i class="fas fa-map-pin map-pin"></i>
-          <div class="map-city">Harare</div>
-        </div>
-        <div class="location-info">
-          <div class="location-city-tag">Harare Flagship</div>
-          <div class="location-address">49 Cork Road,<br>Avondale</div>
-          <div class="location-detail"><i class="fas fa-phone"></i> <a href="tel:+263774888597" style="color:inherit;text-decoration:none;">+263 774 888 597</a></div>
-          <div class="location-detail"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/263774888597" target="_blank" style="color:inherit;text-decoration:none;">WhatsApp Us</a></div>
-          <div class="location-hours">
-            <div class="hours-item"><strong>Mon – Fri</strong>9am – 6pm</div>
-            <div class="hours-item"><strong>Saturday</strong>9am – 4pm</div>
-            <div class="hours-item"><strong>Sunday</strong>10am – 2pm</div>
-            <div class="hours-item"><strong>Holidays</strong>By appointment</div>
-          </div>
-        </div>
+<!-- TEAM -->
+<section id="team" class="sp"><div class="ct">
+  <div class="co-grid rv">
+    <div class="co-left">
+      <div class="ey"><div class="si p"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div class="st" style="color:#fff;">Our Expert Team</div></div>
+      <div class="ul"></div>
+      <p class="sb w">MedRehab is staffed by a dedicated multidisciplinary team of qualified and registered healthcare professionals. Each clinician brings specialist expertise, a patient-first philosophy, and a genuine commitment to your recovery and wellbeing.</p>
+      <div class="co-svc-grid">
+        <div class="co-svc"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Registered Physiotherapists</div>
+        <div class="co-svc"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>Occupational Therapists</div>
+        <div class="co-svc"><svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>Speech Therapists</div>
       </div>
-      <div class="location-card fade-up">
-        <div class="location-map-placeholder">
-          <i class="fas fa-map-pin map-pin"></i>
-          <div class="map-city">Bulawayo</div>
-        </div>
-        <div class="location-info">
-          <div class="location-city-tag">Bulawayo Branch</div>
-          <div class="location-address">80B Jason Moyo &amp; 8th,<br>Mash Shop</div>
-          <div class="location-detail"><i class="fas fa-phone"></i> <a href="tel:+263774888597" style="color:inherit;text-decoration:none;">+263 774 888 597</a></div>
-          <div class="location-detail"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/263774888597" target="_blank" style="color:inherit;text-decoration:none;">WhatsApp Us</a></div>
-          <div class="location-hours">
-            <div class="hours-item"><strong>Mon – Fri</strong>9am – 6pm</div>
-            <div class="hours-item"><strong>Saturday</strong>9am – 4pm</div>
-            <div class="hours-item"><strong>Sunday</strong>10am – 2pm</div>
-            <div class="hours-item"><strong>Holidays</strong>By appointment</div>
-          </div>
+      <a href="#booking" class="lk w">Book with Our Team</a>
+    </div>
+    <div class="co-right">
+      <div class="co-ov">
+        <div class="co-plbl">Verified &amp; Accredited</div>
+        <div class="partner-row">
+          <div class="pbadge">Health Professions Authority</div>
+          <div class="pbadge">5.0 ★ Google</div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div></section>
 
 <!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="container">
-    <div style="text-align:center;" class="fade-up">
-      <span class="section-label">Client Voices</span>
-      <h2 class="section-title">Loved Across <em>Zimbabwe</em></h2>
+<section id="testimonials" class="sp"><div class="ct">
+  <div class="rv" style="text-align:center;">
+    <div class="ey" style="justify-content:center;"><div class="si d"><svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div><div class="st w">What Our Patients Say</div></div>
+    <div class="ul" style="margin:12px auto 22px;"></div>
+    <p class="sb w" style="max-width:540px;margin:0 auto;">Real recovery stories from patients who trusted MedRehab with their health.</p>
+  </div>
+  <div class="test-grid rv" style="margin-top:48px;">
+    <div class="test-card">
+      <div class="test-stars"><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span></div>
+      <div class="test-text">"I recently started physiotherapy sessions at MedRehab. When I arrived I was unsure, but when I got inside I discovered modest but impressive equipment and truly dedicated professionals."</div>
+      <div class="test-author">— Lydiah TR · Google Review</div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars"><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span></div>
+      <div class="test-text">"Exceptional rehabilitation care. The team is knowledgeable, compassionate, and truly invested in patient outcomes. I am back to full function thanks to their expert guidance."</div>
+      <div class="test-author">— Rise and Shine Rehabb · Google Review</div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars"><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span><span class="test-star">★</span></div>
+      <div class="test-text">"The multidisciplinary approach here is outstanding. Having physiotherapy and occupational therapy under one roof made my recovery seamless and so much faster."</div>
+      <div class="test-author">— Grace Majonga · Google Review</div>
     </div>
   </div>
-  <div class="testimonials-track-wrap" style="margin-top:56px;">
-    <div class="testimonials-track" id="testimonialsTrack"></div>
-  </div>
-</section>
+</div></section>
 
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <div class="faq-grid">
-      <div class="faq-sidebar fade-up">
-        <span class="section-label">FAQ</span>
-        <h2 class="section-title">Questions <em>Answered</em></h2>
-        <p class="faq-sidebar-desc">Everything you need to know about shopping with Fragrances Corner — from authenticity to delivery.</p>
-        <a href="https://wa.me/263774888597?text=Hello%2C%20I%20have%20a%20question%20about%20Fragrances%20Corner." target="_blank" class="btn-primary" style="background:var(--navy);color:var(--gold-light);border-color:var(--navy);display:inline-flex;align-items:center;gap:10px;padding:14px 28px;font-size:12px;">
-          <i class="fab fa-whatsapp"></i> Still have questions?
+<!-- LOCATIONS -->
+<section id="locations" class="sp"><div class="ct">
+  <div class="rv">
+    <div class="ey"><div class="si p"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div class="st">Our Location</div></div>
+    <div class="ul"></div>
+    <p class="sb" style="max-width:560px;">MedRehab is conveniently located in the heart of Milton Park, Harare, delivering the highest standard of multidisciplinary rehabilitation care.</p>
+  </div>
+  <div class="lo-single">
+    <div class="lo-card rv">
+      <img src="clinic.jpeg" alt="MedRehab – Milton Park, Harare" class="lo-img" loading="lazy">
+      <div class="lo-body">
+        <div class="lo-name">MedRehab — Milton Park</div>
+        <div class="lo-addr">23 Clayton Road, Milton Park, Harare<br><br>Also operating as: Weale Road Clinic (MedRehab)</div>
+        <a href="https://wa.me/263773510223 " target="_blank" rel="noopener" class="lo-ph">
+          <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          071 481 7373  OR  077 351 0223
         </a>
       </div>
-      <div class="faq-list" id="faqList"></div>
     </div>
   </div>
-</section>
+</div></section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="fade-up">
-      <span class="section-label">Contact Us</span>
-      <h2 class="section-title">Let's Find Your <em>Perfect Scent</em></h2>
+<!-- MAPS -->
+<section id="maps"><div class="ct">
+  <div class="rv" style="padding-top:0;">
+    <div class="ey"><div class="si p"><svg viewBox="0 0 24 24"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div><div class="st">Find Us</div></div>
+    <div class="ul"></div>
+    <p class="sb" style="max-width:520px;">We are located at 23 Clayton Road, Milton Park, Harare. Click the map to interact or tap "Get Directions" for turn-by-turn navigation.</p>
+  </div>
+  <div class="map-single rv">
+    <div class="map-card">
+      <div class="map-label">
+        <div class="map-label-ico"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <div class="map-label-txt">23 Clayton Road, Milton Park, Harare</div>
+      </div>
+      <div class="map-wrap" id="mw1">
+        <iframe loading="lazy"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=31.0560%2C-17.7850%2C31.0680%2C-17.7780&layer=mapnik&marker=-17.7815%2C31.0620"
+          title="MedRehab Milton Park map"></iframe>
+        <div class="map-touch-block" onclick="activateMap('mw1')"></div>
+      </div>
+      <a class="map-dir" href="https://www.google.com/maps/dir/?api=1&destination=23+Clayton+Road+Milton+Park+Harare+Zimbabwe" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+        Get Directions to MedRehab
+      </a>
     </div>
-    <div class="contact-grid">
-      <div class="contact-info fade-up">
-        <div class="contact-info-list">
-          <div class="contact-info-item">
-            <div class="contact-icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
-            <div>
-              <div class="contact-info-label">Harare</div>
-              <div class="contact-info-value">49 Cork Road, Avondale</div>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
-            <div>
-              <div class="contact-info-label">Bulawayo</div>
-              <div class="contact-info-value">80B Jason Moyo & 8th, Mash Shop</div>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-icon-wrap"><i class="fas fa-phone"></i></div>
-            <div>
-              <div class="contact-info-label">Phone / WhatsApp</div>
-              <div class="contact-info-value"><a href="tel:+263774888597">+263 774 888 597</a></div>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-icon-wrap"><i class="fab fa-instagram"></i></div>
-            <div>
-              <div class="contact-info-label">Instagram</div>
-              <div class="contact-info-value"><a href="https://www.instagram.com/fragrancescornerzim/" target="_blank">@fragrancescornerzim</a></div>
-            </div>
-          </div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section id="faq" class="sp"><div class="ct">
+  <div class="rv" style="text-align:center;">
+    <div class="ey" style="justify-content:center;"><div class="si p"><svg viewBox="0 0 24 24"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div class="st">Frequently Asked Questions</div></div>
+    <div class="ul" style="margin:12px auto 22px;"></div>
+    <p class="sb" style="max-width:580px;margin:0 auto;">Everything you need to know before your first visit to MedRehab.</p>
+  </div>
+  <div class="faq-list rv">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do I need a doctor's referral to book an appointment?<div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a">No, you do not need a doctor's referral to book directly with MedRehab. You can contact us via WhatsApp or phone and our team will schedule your initial assessment. However, if you are claiming through a medical aid provider, some insurers may require a referral letter — we recommend checking with your specific provider beforehand.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What happens during my first appointment?<div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a">Your first visit begins with a comprehensive assessment by one of our clinicians. We take a detailed history of your condition, perform a physical or functional evaluation, and identify the root cause of your difficulties. A personalised treatment plan with clear goals and realistic timelines is then created. Please bring any relevant medical reports, imaging (X-rays, MRI), or referral letters if you have them.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What is the difference between physiotherapy and occupational therapy?<div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a">Physiotherapy focuses on restoring movement, reducing pain, and improving physical function through exercise, manual therapy, and rehabilitation techniques. Occupational therapy focuses on enabling individuals to perform meaningful daily activities — such as self-care, work, and household tasks — following illness, injury, or disability. Both therapists work collaboratively at MedRehab, and many patients benefit from both disciplines simultaneously.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Does MedRehab accept medical aid or health insurance?<div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a">Yes, we work with most major medical aid providers in Zimbabwe. We also welcome self-pay patients. Please contact us to confirm whether your specific medical aid scheme is accepted. MedRehab is fully ZRA Tax Cleared and compliant, ensuring all invoices and receipts are valid for medical aid submissions.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you provide services for children?<div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a">Absolutely. MedRehab provides paediatric services across multiple disciplines — physiotherapy for motor delays and physical conditions, occupational therapy for developmental challenges and fine motor skills, and speech therapy for communication disorders. Our clinicians are experienced in working with children in a supportive, child-friendly environment, and parents are always welcome to be present throughout sessions.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How many sessions will I need before seeing results?<div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a">Recovery timelines vary depending on the nature and severity of your condition. Many patients begin to notice meaningful improvement within the first 3–6 sessions. Acute injuries may resolve faster, while complex neurological, post-surgical, or chronic conditions require longer treatment programmes. Your clinician will provide a realistic estimate during your initial assessment and review your progress at regular intervals throughout your treatment.</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- BOOKING -->
+<section id="booking" class="sp"><div class="ct">
+  <div class="rv">
+    <div class="ey"><div class="si d"><svg viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div><div class="st w">Book an Appointment</div></div>
+    <div class="ul"></div>
+    <p class="sb w" style="max-width:540px;">Complete the form below to request your appointment. Our team will confirm within 24 hours.</p>
+  </div>
+  <div class="bk-grid rv">
+    <div class="bk-l">
+      <div class="bk-ht">Contact Information</div>
+      <div class="bk-hs">Reach us at our Milton Park location or submit an online enquiry.</div>
+      <div class="ci"><div class="ci-i"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div><div class="ci-lbl">MedRehab — Milton Park</div><div class="ci-val">23 Clayton Road, Milton Park, Harare</div></div></div>
+      <div class="ci"><div class="ci-i"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div><div><div class="ci-lbl">Phone / WhatsApp</div><div class="ci-val">+263 77 351 0223</div></div></div>
+      <div class="ci"><div class="ci-i"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><div class="ci-lbl">Working Hours</div><div class="ci-val">Mon – Fri: 08:00 – 16:30<br>Saturday: 08:00 – 13:00<br>Sunday: Closed</div></div></div>
+      <div class="ci"><div class="ci-i"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><div class="ci-lbl">Email</div><div class="ci-val">themedrehab@gmail.com</div></div></div>
+      <a href="https://share.google/Yz6StWbhSFC0W1S5y" target="_blank" class="gx-btn-wrapper">
+        <span class="gx-btn-icon">
+          <svg viewBox="0 0 48 48" width="22" height="22">
+            <path fill="#4285F4" d="M24 9.5c3.54 0 6.73 1.22 9.24 3.22l6.86-6.86C35.64 2.23 30.2 0 24 0 14.62 0 6.5 5.48 2.56 13.44l8 6.21C12.27 13.39 17.6 9.5 24 9.5z"/>
+            <path fill="#34A853" d="M46.1 24.55c0-1.64-.15-3.21-.42-4.73H24v9h12.4c-.54 2.9-2.17 5.36-4.63 7.02l7.19 5.59C43.97 37.3 46.1 31.45 46.1 24.55z"/>
+            <path fill="#FBBC05" d="M10.56 28.65A14.5 14.5 0 019.5 24c0-1.62.28-3.18.77-4.65l-8-6.21A23.94 23.94 0 000 24c0 3.86.93 7.51 2.56 10.73l8-6.08z"/>
+            <path fill="#EA4335" d="M24 48c6.2 0 11.41-2.05 15.21-5.57l-7.19-5.59c-2 1.35-4.57 2.16-8.02 2.16-6.39 0-11.73-3.9-13.44-9.2l-8 6.08C6.5 42.52 14.62 48 24 48z"/>
+          </svg>
+        </span>
+        <span class="gx-btn-text">View on Google</span>
+      </a>
+    </div>
+    <div class="bk-r">
+      <div id="fw">
+        <div class="bk-ft">Appointment Request Form</div>
+        <div class="bk-fs">Fill in as much detail as possible — we'll confirm everything when we call back.</div>
+        <div class="fr">
+          <div class="fg"><label>First Name</label><input type="text" id="f1" placeholder="e.g. Tendai"></div>
+          <div class="fg"><label>Last Name</label><input type="text" id="f2" placeholder="e.g. Moyo"></div>
         </div>
-        <div class="contact-social">
-          <a href="https://www.instagram.com/fragrancescornerzim/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/263774888597" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://www.facebook.com/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.tiktok.com/" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+        <div class="fr">
+          <div class="fg"><label>Phone Number</label><input type="tel" id="f3" placeholder="+263 77 000 0000"></div>
+          <div class="fg"><label>Email Address</label><input type="email" id="f4" placeholder="your@email.com"></div>
+        </div>
+        <div class="fr">
+          <div class="fg"><label>Date of Birth</label><input type="date" id="f5"></div>
+          <div class="fg"><label>Gender</label><select id="f6"><option value="">Select gender</option><option>Male</option><option>Female</option><option>Prefer not to say</option></select></div>
+        </div>
+        <div class="fr s">
+          <div class="fg"><label>Service Required</label><select id="f8"><option value="">Select service</option><option>Physiotherapy</option><option>Occupational Therapy</option><option>Speech Therapy</option><option>Sports Injury Rehabilitation</option><option>Neurological Rehabilitation</option><option>Post-Surgery Rehabilitation</option><option>Cardio-Pulmonary Rehabilitation</option><option>Geriatric Physiotherapy</option><option>Paediatric Therapy</option><option>General Assessment</option></select></div>
+        </div>
+        <div class="fr">
+          <div class="fg">
+            <label>Preferred Date</label>
+            <div class="date-input-wrap" id="dateWrap">
+              <button type="button" class="date-display" id="dateDisplay" onclick="toggleCal()">
+                <span id="dateDisplayText" style="color:rgba(255,255,255,.45);">Select a date</span>
+                <svg viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </button>
+              <input type="hidden" id="f9" name="f9">
+              <div class="cal-popup" id="calPop">
+                <div class="cal-header">
+                  <button type="button" class="cal-nav" onclick="calNav(-1)">&#8249;</button>
+                  <div class="cal-title" id="calTitle"></div>
+                  <button type="button" class="cal-nav" onclick="calNav(1)">&#8250;</button>
+                </div>
+                <div class="cal-dow"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+                <div class="cal-days" id="calDays"></div>
+                <div class="cal-footer">
+                  <button type="button" class="cal-today-btn" onclick="goToday()">Today</button>
+                  <button type="button" class="cal-clear-btn" onclick="clearDate()">Clear</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fg"><label>Preferred Time</label><select id="f10"><option value="">Select time</option><option>08:00 – 09:00</option><option>09:00 – 10:00</option><option>10:00 – 11:00</option><option>11:00 – 12:00</option><option>13:00 – 14:00</option><option>14:00 – 15:00</option><option>15:00 – 16:00</option><option>16:00 – 16:30</option></select></div>
+        </div>
+        <div class="fr">
+          <div class="fg"><label>Medical Aid / Referral</label><select id="f11"><option value="">Select option</option><option>Self-referred</option><option>Doctor referral</option><option>Medical aid / Insurance</option><option>Employer / Corporate referral</option></select></div>
+          <div class="fg"><label>How did you hear about us?</label><select id="f12"><option value="">Select option</option><option>Google / Internet</option><option>Doctor referral</option><option>Friend or family</option><option>Facebook</option><option>Instagram</option><option>Other</option></select></div>
+        </div>
+        <div class="fr s"><div class="fg"><label>Description of Condition / Reason for Visit</label><textarea id="f13" rows="4" placeholder="Describe your symptoms, injury, or reason for visiting..."></textarea></div></div>
+        <div class="fr s"><div class="fg"><label>Previous rehabilitation treatment?</label><textarea id="f14" rows="2" placeholder="e.g. Physiotherapy for stroke recovery in 2023..."></textarea></div></div>
+        <p class="form-note">Choose how you'd like to send your request — via WhatsApp for fastest response, or via Email.</p>
+        <div class="submit-btns">
+          <button class="btn-sub wa" onclick="sF('wa')">
+            <svg viewBox="0 0 24 24" style="fill:#fff;stroke:none;width:20px;height:20px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Send via WhatsApp
+          </button>
+          <button class="btn-sub em" onclick="sF('email')">
+            <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Send via Email
+          </button>
         </div>
       </div>
-      <div class="contact-form fade-up">
-        <div class="form-title">Send an Enquiry</div>
-        <form onsubmit="submitForm(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label>First Name</label>
-              <input type="text" placeholder="Your first name" required>
-            </div>
-            <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" placeholder="Your last name" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Phone / WhatsApp</label>
-            <input type="tel" placeholder="+263 7XX XXX XXX" required>
-          </div>
-          <div class="form-group">
-            <label>I'm interested in</label>
-            <select>
-              <option>A specific perfume</option>
-              <option>A recommendation</option>
-              <option>Gifting options</option>
-              <option>Pricing enquiry</option>
-              <option>General enquiry</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea placeholder="Tell us what you're looking for…"></textarea>
-          </div>
-          <button type="submit" class="btn-submit">
-            <i class="fas fa-paper-plane"></i>
-            Send Enquiry
-          </button>
-        </form>
+      <div class="fs-box" id="fs">
+        <div class="fs-ico"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h3>Request Sent!</h3>
+        <p>Thank you for choosing MedRehab. Our team will contact you within 24 hours to confirm your appointment details.</p>
+        <button class="btn-blue" style="margin-top:24px;" onclick="rF()">Submit Another Request</button>
       </div>
     </div>
   </div>
-</section>
+</div></section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo-main">Fragrances Corner</div>
-        <div class="logo-sub" style="font-size:10px;letter-spacing:3px;text-transform:uppercase;">Original Perfumes · Zimbabwe</div>
-        <p class="footer-brand-desc">Don't just smell good — smell unforgettable. Zimbabwe's most trusted destination for 100% original luxury fragrances.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/fragrancescornerzim/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/263774888597" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigate</div>
-        <div class="footer-links">
-          <a href="#shop">Shop Collection</a>
-          <a href="#about">About Us</a>
-          <a href="#why">Why Choose Us</a>
-          <a href="#location">Our Locations</a>
-          <a href="#testimonials">Customer Reviews</a>
-          <a href="#faq">FAQ</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title">Brands</div>
-        <div class="footer-links">
-          <a href="#shop">Tom Ford</a>
-          <a href="#shop">Lancôme</a>
-          <a href="#shop">Versace</a>
-          <a href="#shop">Prada</a>
-          <a href="#shop">Creed</a>
-          <a href="#shop">Giorgio Armani</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <div class="footer-links">
-          <a href="tel:+263774888597">+263 774 888 597</a>
-          <a href="https://wa.me/263774888597" target="_blank">WhatsApp</a>
-          <a href="https://www.instagram.com/fragrancescornerzim/" target="_blank">Instagram</a>
-          <a href="#location">Harare — Avondale</a>
-          <a href="#location">Bulawayo — Jason Moyo</a>
-        </div>
+<footer><div class="ct">
+  <div class="ft-top">
+    <div class="ft-brand">
+      <div class="ft-logo"><img src="logo.png" alt="MedRehab"></div>
+      <p>Comprehensive multidisciplinary rehabilitation at 23 Clayton Road, Milton Park, Harare. Quality care for a better quality of life. Physiotherapy, OT &amp; Speech Therapy.</p>
+      <div class="ft-social">
+        <a href="https://www.instagram.com/medrehab" target="_blank" rel="noopener" class="ft-soc-link" title="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/medrehab" target="_blank" rel="noopener" class="ft-soc-link" title="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://wa.me/263773510223" target="_blank" rel="noopener" class="ft-soc-link" title="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#fff"/></svg>
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-copyright">© 2025 <span>Fragrances Corner</span>. All rights reserved. Zimbabwe's Original Perfume Store.</div>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Authenticity Guarantee</a>
+    <div>
+      <div class="ft-col-t"><div class="ft-ci"><svg viewBox="0 0 24 24"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div><div class="ft-cn">Quick Links</div></div>
+      <ul class="ft-ul">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#what-we-treat">What We Treat</a></li>
+        <li><a href="#why-choose-us">Why Choose Us</a></li>
+        <li><a href="#approach">Our Approach</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#locations">Location</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#booking">Book Appointment</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-col-t"><div class="ft-ci"><svg viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><div class="ft-cn">Our Services</div></div>
+      <ul class="ft-ul">
+        <li><a href="#" onclick="oM('physio');return false;">Physiotherapy</a></li>
+        <li><a href="#" onclick="oM('occ');return false;">Occupational Therapy</a></li>
+        <li><a href="#" onclick="oM('speech');return false;">Speech Therapy</a></li>
+        <li><a href="#" onclick="oM('neuro');return false;">Neurological Rehab</a></li>
+        <li><a href="#" onclick="oM('geriatric');return false;">Geriatric Physio</a></li>
+        <li><a href="#" onclick="oM('sports');return false;">Sports Injury Rehab</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-col-t"><div class="ft-ci"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div class="ft-cn">Our Location</div></div>
+      <ul class="ft-ul">
+        <li><a href="#locations">23 Clayton Road, Milton Park</a></li>
+        <li><a href="https://wa.me/263773510223" target="_blank" style="opacity:.7;font-size:13px;">+263 77 351 0223 OR +263 77 302 3758</a></li>
+        <li><a href="mailto:themedrehab@gmail.com" style="opacity:.7;font-size:13px;">themedrehab@gmail.com</a></li>
+      </ul>
+      <div style="margin-top:16px;">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.42);margin-bottom:8px;">Hours</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.9;">Mon – Fri: 08:00 – 16:30<br>Saturday: 08:00 – 13:00<br>Sunday: Closed</div>
       </div>
     </div>
   </div>
-</footer>
+  <div class="ft-bot">
+    <div class="ft-bot-t">© 2025 MedRehab. All rights reserved. 23 Clayton Road, Milton Park, Harare, Zimbabwe.</div>
+    <div class="ft-bot-b">MedRehab</div>
+  </div>
+</div></footer>
 
-<!-- WhatsApp FAB -->
-<a href="https://wa.me/263774888597?text=Hello%20Fragrances%20Corner%2C%20I%20would%20like%20to%20enquire%20about%20a%20perfume." target="_blank" class="whatsapp-fab" title="Order on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-  <span class="whatsapp-tooltip">Order on WhatsApp</span>
-</a>
-
-<!-- Back to Top -->
-<a href="#home" class="back-to-top" id="backToTop">
-  <i class="fas fa-chevron-up"></i>
-</a>
-
-<!-- Toast -->
-<div class="toast" id="toast">
-  <i class="fas fa-check-circle"></i>
-  <span id="toastMsg">Message sent!</span>
-</div>
-
-<!-- Product Modal -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-  <div class="modal" id="modal">
-    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
-    <div class="modal-body">
-      <div class="modal-img"><img id="modalImg" src="" alt="Product"></div>
-      <div class="modal-info">
-        <div>
-          <div class="modal-brand" id="modalBrand"></div>
-          <div class="modal-name" id="modalName"></div>
-          <div class="modal-type" id="modalType"></div>
-          <div class="modal-desc" id="modalDesc"></div>
-          <div class="modal-notes" id="modalNotes"></div>
-        </div>
-        <div>
-          <div class="modal-price" id="modalPrice"></div>
-          <div class="modal-actions">
-            <a id="modalWA" href="#" target="_blank" class="btn-order">
-              <i class="fab fa-whatsapp"></i> Order via WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- MODAL -->
+<div class="mo" id="mo" onclick="cMO(event)">
+  <div class="mb" id="mb">
+    <img id="mi" class="mb-img" src="logo.png" alt="">
+    <button class="mc" onclick="cM()">&#x2715;</button>
+    <div class="mi" id="mbd"></div>
   </div>
 </div>
 
 <script>
-// ── DATA ──
-const products = [
-  {
-    id: 1,
-    brand: "Tom Ford",
-    name: "Tobacco Vanille",
-    type: "Eau de Parfum · 50ml",
-    price: "$280",
-    gender: "unisex",
-    badge: "",
-    image: "tobacco.jpeg",
-    desc: "A rich, addictive oriental scent with warm tobacco, spiced notes, and sweet vanilla. One of the most iconic fragrances from Tom Ford's Private Blend collection.",
-    notes: ["Top: Tobacco Leaf, Spices", "Heart: Tonka Bean, Vanilla", "Base: Cocoa, Dried Fruit"]
-  },
-  {
-    id: 2,
-    brand: "Lancôme",
-    name: "La Vie Est Belle",
-    type: "Eau de Parfum · 75ml",
-    price: "$195",
-    gender: "women",
-    badge: "bestseller",
-    image: "laviste.jpeg",
-    desc: "A modern icon of happiness. La Vie Est Belle blends iris, patchouli and praline in a floral gourmand symphony that has captivated women worldwide.",
-    notes: ["Top: Black Currant, Pear", "Heart: Iris, Jasmine, Orange Blossom", "Base: Patchouli, Praline, Vanilla"]
-  },
-  {
-    id: 3,
-    brand: "Versace",
-    name: "Dylan Blue pour Femme",
-    type: "Eau de Parfum · 100ml",
-    price: "$175",
-    gender: "women",
-    badge: "",
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400&q=80",
-    desc: "A luminous, seductive fragrance with sparkling floral notes. Dylan Blue pour Femme captures the spirit of a free, confident, modern woman.",
-    notes: ["Top: Grapefruit, Peach, Pink Pepper", "Heart: Jasmine, Rose", "Base: Musk, Sandalwood, Patchouli"]
-  },
-  {
-    id: 4,
-    brand: "Burberry",
-    name: "Weekend for Women",
-    type: "Eau de Parfum · 100ml",
-    price: "$150",
-    gender: "women",
-    badge: "",
-    image: "burbuery.jpeg",
-    desc: "A fresh, floral fragrance celebrating freedom and femininity. Weekend evokes the joy of the open air — crisp citrus, warm flowers, and a soft sensual base.",
-    notes: ["Top: Mandarin, Bergamot", "Heart: Peach, Jasmine, Lily of the Valley", "Base: Sandalwood, Musk, Cedar"]
-  },
-  {
-    id: 5,
-    brand: "My Burberry",
-    name: "Black",
-    type: "Parfum · 90ml",
-    price: "$210",
-    gender: "women",
-    badge: "new",
-    image: "myburbery.jpeg",
-    desc: "A bolder, more intense interpretation of My Burberry. Black is an intoxicating blend that fuses bold peach with golden amber — a scent that commands the room.",
-    notes: ["Top: Luminous Peach", "Heart: Patchouli, Jasmine Petals", "Base: Golden Amber"]
-  },
-  {
-    id: 6,
-    brand: "Burberry",
-    name: "Her Elixir de Parfum",
-    type: "Elixir de Parfum · 50ml",
-    price: "$220",
-    gender: "women",
-    badge: "new",
-    image: "lexiburbery.jpeg",
-    desc: "An intensified, deeply seductive version of Burberry Her. Rich berries, amber and musk create an irresistible fragrance built to last all day.",
-    notes: ["Top: Red Berries, Blackcurrant", "Heart: Jasmine, Rose", "Base: Amber, Musk, Sandalwood"]
-  },
-  {
-    id: 7,
-    brand: "Jimmy Choo",
-    name: "I Want Choo",
-    type: "Eau de Parfum · 100ml",
-    price: "$160",
-    gender: "women",
-    badge: "",
-    image: "mychoo.jpeg",
-    desc: "Bold, playful and undeniably alluring. I Want Choo is a fruity floral with an addictive warmth — a fragrance for the woman who knows exactly what she wants.",
-    notes: ["Top: Vanilla Orchid, Mandarin", "Heart: Orange Blossom, Jasmine", "Base: Sandalwood, Amber"]
-  },
-  {
-    id: 8,
-    brand: "Dolce & Gabbana",
-    name: "Light Blue Forever",
-    type: "Eau de Parfum · 100ml",
-    price: "$185",
-    gender: "unisex",
-    badge: "",
-    image: "light blue.jpeg",
-    desc: "A timeless interpretation of the Mediterranean summer. Light Blue Forever is the permanent, intense version of the iconic scent — fresh, bright, and enduringly beautiful.",
-    notes: ["Top: Granny Smith Apple, Bluebell", "Heart: Jasmine, White Rose", "Base: Cedarwood, Musk, Amber"]
-  },
-  {
-    id: 9,
-    brand: "Prada",
-    name: "Paradoxe Intense",
-    type: "Eau de Parfum · 90ml",
-    price: "$240",
-    gender: "women",
-    badge: "new",
-    image: "paradoxintense.jpeg",
-    desc: "Paradoxe Intense amplifies the original's floral musk signature with deeper, more enveloping warmth. A bold statement fragrance from Prada's most celebrated women's line.",
-    notes: ["Top: Neroli, Bergamot", "Heart: Jasmine, Amber", "Base: White Musk, Sandalwood"]
-  },
-  {
-    id: 10,
-    brand: "Giorgio Armani",
-    name: "Acqua di Giò",
-    type: "Eau de Toilette · 100ml",
-    price: "$155",
-    gender: "men",
-    badge: "bestseller",
-    image: "man.jpeg",
-    desc: "A landmark men's fragrance inspired by the Mediterranean sea. Acqua di Giò is a timeless aquatic classic loved by millions for its breezy, clean, masculine character.",
-    notes: ["Top: Marine Accord, Bergamot, Neroli", "Heart: Jasmine, Calone, Persimmon", "Base: Cedarwood, Patchouli, White Musk"]
-  },
-  {
-    id: 11,
-    brand: "Creed",
-    name: "Aventus for Her",
-    type: "Eau de Parfum · 75ml",
-    price: "$420",
-    gender: "women",
-    badge: "niche",
-    image: "https://images.unsplash.com/photo-1617897903246-719242758050?w=400&q=80",
-    desc: "The feminine counterpart to the legendary Creed Aventus. A celebration of feminine strength — fresh pink pepper and lychee over a radiant rose and warm musks.",
-    notes: ["Top: Pink Pepper, Bergamot, Lychee", "Heart: Rose, Jasmine, Peach", "Base: Ambergris, Oakmoss, Sandalwood"]
-  },
-  {
-    id: 12,
-    brand: "YSL",
-    name: "Libre Intense",
-    type: "Eau de Parfum Intense · 90ml",
-    price: "$215",
-    gender: "women",
-    badge: "",
-    image: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400&q=80",
-    desc: "Libre Intense is a bolder, more sensual version of the iconic YSL Libre. The clash of Moroccan orange blossom and French lavender is electrified with an intense amber accord.",
-    notes: ["Top: Mandarin, Bergamot, Lavender", "Heart: Orange Blossom, Jasmine", "Base: Vanilla, Musks, Amber"]
-  },
-  {
-    id: 13,
-    brand: "Gucci",
-    name: "Intense Oud",
-    type: "Eau de Parfum · 90ml",
-    price: "$295",
-    gender: "unisex",
-    badge: "niche",
-    image: "gucci.jpeg",
-    desc: "A powerful, mysterious oriental fragrance. Intense Oud is a rich composition of Oud, rose, and spices that speaks of luxury, depth and an irresistible oriental allure.",
-    notes: ["Top: Elemi Resin, Saffron", "Heart: Turkish Rose, Oud", "Base: Vetiver, Sandalwood, Patchouli"]
-  },
-  {
-    id: 14,
-    brand: "Emporio Armani",
-    name: "Stronger With You",
-    type: "Eau de Toilette · 100ml",
-    price: "$145",
-    gender: "men",
-    badge: "",
-    image: "stronger.jpeg",
-    desc: "A warm, spiced fragrance for the modern man. Stronger With You opens with pink pepper and chestnut, leading to a warm, woody base that's irresistible and deeply masculine.",
-    notes: ["Top: Pink Pepper, Cardamom, Sage", "Heart: Sweet Chestnut, Violet", "Base: Vanilla, Cashmere Wood, Patchouli"]
-  },
-  {
-    id: 15,
-    brand: "Bvlgari",
-    name: "Man Wood Essence",
-    type: "Eau de Parfum · 100ml",
-    price: "$170",
-    gender: "men",
-    badge: "",
-    image: "man.jpeg",
-    desc: "A fresh, woody aromatic fragrance that captures the essence of nature. Man Wood Essence is refined, contemporary and unmistakably masculine.",
-    notes: ["Top: Pink Pepper, Bergamot", "Heart: Vetiver, Cypress", "Base: Sandalwood, Guaiac Wood, Musk"]
-  },
-  {
-    id: 16,
-    brand: "Hermès",
-    name: "Terre d'Hermès",
-    type: "Eau de Toilette · 100ml",
-    price: "$150",
-    gender: "men",
-    badge: "",
-    image: "aqua.jpeg",
-    desc: "A landmark men's fragrance that marries earth, mineral and orange in a powerful yet elegant blend. Terre d'Hermès is the scent of strength, restraint and sophistication.",
-    notes: ["Top: Grapefruit, Orange", "Heart: Flint, Pepper, Petitgrain", "Base: Vetiver, Benzoin, Cedar"]
+  // Hide top bar on scroll
+let lastScrollTop = 0;
+const topBar = document.querySelector('.top-bar');
+const nav = document.getElementById('nav');
+
+window.addEventListener('scroll', function() {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (scrollTop > lastScrollTop && scrollTop > 100) {
+    // Scrolling DOWN - hide top bar
+    topBar.style.transform = 'translateY(-100%)';
+    topBar.style.transition = 'transform 0.3s ease';
+    nav.style.top = '0'; // Nav moves to top
+  } else {
+    // Scrolling UP - show top bar
+    topBar.style.transform = 'translateY(0)';
+    nav.style.top = '52px'; // Restore original position
   }
-];
-
-const testimonials = [
-  { text: "I ordered the Tom Ford Tobacco Vanille and it arrived the next day, perfectly packaged. Absolutely genuine. These people are the real deal.", name: "Tawanda M.", detail: "Harare · Verified Customer" },
-  { text: "Everyone at work was asking me what I was wearing. I layered the Versace Dylan Blue and the compliments haven't stopped. Fragrances Corner for life!", name: "Rudo C.", detail: "Bulawayo · Verified Customer" },
-  { text: "Bought the Creed Aventus for Her as an anniversary gift. My wife cried — in the best way. Beautiful fragrance, beautiful service.", name: "Simba K.", detail: "Harare · Verified Customer" },
-  { text: "The WhatsApp ordering is so easy. I described what I wanted and they recommended the perfect perfume. Didn't even have to go to the store.", name: "Nyasha T.", detail: "Mutare · Verified Customer" },
-  { text: "For the price I paid, the quality is unmatched anywhere in Zimbabwe. I've been buying from Fragrances Corner for over a year now.", name: "Blessing M.", detail: "Bulawayo · Verified Customer" },
-  { text: "The packaging alone made me feel like I'd bought something from a European boutique. The perfume is even better. Total luxury experience.", name: "Farai N.", detail: "Harare · Verified Customer" },
-  { text: "I was skeptical at first — how could original perfumes be this accessible in Zim? But I tested it myself. 100% genuine. No doubt.", name: "Chiedza P.", detail: "Gweru · Verified Customer" },
-  { text: "Bought Lancôme La Vie Est Belle for my mum's birthday. She won't stop wearing it. Fragrances Corner made my year!", name: "Tatenda B.", detail: "Harare · Verified Customer" },
-];
-
-const faqs = [
-  { q: "Are all your perfumes 100% original?", a: "Absolutely. Every single fragrance we stock is 100% genuine, sourced directly from authorised suppliers. We never sell imitations, knock-offs or inspired versions. When you buy from Fragrances Corner, you're getting the real thing — sealed, authentic, and exactly as the brand intended." },
-  { q: "How do I place an order?", a: "The easiest way is via WhatsApp at +263 774 888 597. Simply send us the name of the perfume you want, your location, and preferred payment method. You can also visit either of our physical stores in Harare (49 Cork Road, Avondale) or Bulawayo (80B Jason Moyo & 8th)." },
-  { q: "Do you deliver nationwide?", a: "Yes! We deliver across Zimbabwe — Harare, Bulawayo, Mutare, Gweru, and beyond. Harare and Bulawayo customers typically receive same or next-day delivery. Other cities are handled via courier. WhatsApp us for exact delivery timelines and costs to your area." },
-  { q: "What payment methods do you accept?", a: "We accept EcoCash, bank transfers, and cash (for in-store purchases). We'll confirm payment details with you when you place your order via WhatsApp. We always send a confirmation once your order is confirmed and dispatched." },
-  { q: "Can I get a recommendation if I'm not sure what to buy?", a: "Absolutely — this is one of our favourite things to do! Tell us about your preferences: do you like fresh, floral, sweet, woody, or bold scents? Are you buying for yourself or as a gift? WhatsApp us and our fragrance specialists will guide you to something perfect." },
-  { q: "Do you sell gift sets or offer gift wrapping?", a: "Yes! We offer beautiful gift packaging for any purchase. If you're buying for someone special, let us know and we'll make sure it arrives looking extraordinary. We can also suggest complementary fragrances to create a gift set." },
-  { q: "Can I smell before I buy?", a: "If you're in Harare or Bulawayo, absolutely — visit our stores! Our team will let you test any fragrance and guide you through the notes before you commit. For online customers, we can describe scents in detail and offer expert recommendations based on your preferences." },
-];
-
-// ── RENDER PRODUCTS ──
-function renderProducts(filter = 'all') {
-  const grid = document.getElementById('productsGrid');
-  const filtered = filter === 'all' ? products : products.filter(p => p.gender === filter || p.badge === filter);
-  grid.innerHTML = filtered.map((p, i) => `
-    <div class="product-card" style="animation-delay:${i * 0.07}s" onclick="openModal(${p.id})">
-      <div class="product-img-wrap">
-        ${p.badge ? `<div class="product-badge ${p.badge === 'new' ? 'new' : ''}">${p.badge === 'bestseller' ? 'Best Seller' : p.badge === 'new' ? 'New In' : 'Niche'}</div>` : ''}
-        <img src="${p.image}" alt="${p.name}" loading="lazy">
-        <button class="product-quick-add" onclick="event.stopPropagation();orderWA(${p.id})">
-          <i class="fab fa-whatsapp" style="margin-right:6px;"></i> Order Now
-        </button>
-      </div>
-      <div class="product-info">
-        <div class="product-brand">${p.brand}</div>
-        <div class="product-name">${p.name}</div>
-        <div class="product-type">${p.type}</div>
-        <div class="product-footer">
-          <div class="product-price">${p.price} <span>USD</span></div>
-          <button class="product-wishlist" onclick="event.stopPropagation();showToast('Added to wishlist!')"><i class="fas fa-heart"></i></button>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-
-function filterProducts(filter, btn) {
-  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  renderProducts(filter === 'niche' ? 'niche' : filter);
-}
-
-// ── MODAL ──
-function openModal(id) {
-  const p = products.find(x => x.id === id);
-  if (!p) return;
-  document.getElementById('modalImg').src = p.image;
-  document.getElementById('modalBrand').textContent = p.brand;
-  document.getElementById('modalName').textContent = p.name;
-  document.getElementById('modalType').textContent = p.type;
-  document.getElementById('modalDesc').textContent = p.desc;
-  document.getElementById('modalPrice').textContent = p.price + ' USD';
-  document.getElementById('modalNotes').innerHTML = p.notes.map(n => `<div class="modal-note"><i class="fas fa-circle" style="font-size:5px;"></i>${n}</div>`).join('');
-  document.getElementById('modalWA').href = `https://wa.me/263774888597?text=Hello%20Fragrances%20Corner%2C%20I%20would%20like%20to%20order%20${encodeURIComponent(p.brand + ' ' + p.name)}`;
-  document.getElementById('modalOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal(e) {
-  if (e && e.target !== document.getElementById('modalOverlay') && e.target !== document.querySelector('.modal-close')) return;
-  if (e && e.type === 'click' && e.target === document.querySelector('.modal-close')) {
-    document.getElementById('modalOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-    return;
-  }
-  if (!e || e.target === document.getElementById('modalOverlay')) {
-    document.getElementById('modalOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-}
-
-document.querySelector('.modal-close').addEventListener('click', () => {
-  document.getElementById('modalOverlay').classList.remove('open');
-  document.body.style.overflow = '';
+  
+  lastScrollTop = scrollTop;
 });
 
-function orderWA(id) {
-  const p = products.find(x => x.id === id);
-  if (p) window.open(`https://wa.me/263774888597?text=Hello%20Fragrances%20Corner%2C%20I%20would%20like%20to%20order%20${encodeURIComponent(p.brand + ' ' + p.name)}`, '_blank');
+// Also handle page load position
+if (window.pageYOffset > 100) {
+  topBar.style.transform = 'translateY(-100%)';
+  nav.style.top = '0';
 }
-
-// ── TESTIMONIALS ──
-function renderTestimonials() {
-  const doubled = [...testimonials, ...testimonials];
-  document.getElementById('testimonialsTrack').innerHTML = doubled.map(t => `
-    <div class="testimonial-card">
-      <div class="testimonial-stars">
-        ${Array(5).fill('<i class="fas fa-star"></i>').join('')}
-      </div>
-      <div class="testimonial-text">"${t.text}"</div>
-      <div class="testimonial-author">
-        <div class="author-avatar">${t.name[0]}</div>
-        <div>
-          <div class="author-name">${t.name}</div>
-          <div class="author-detail">${t.detail}</div>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-
-// ── FAQ ──
-function renderFAQ() {
-  document.getElementById('faqList').innerHTML = faqs.map((f, i) => `
-    <div class="faq-item" id="faq-${i}">
-      <button class="faq-question" onclick="toggleFAQ(${i})">
-        <span>${f.q}</span>
-        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-      </button>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">${f.a}</div>
-      </div>
-    </div>
-  `).join('');
-}
-
-function toggleFAQ(i) {
-  const item = document.getElementById(`faq-${i}`);
-  const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
-}
-
-// ── TOAST ──
-function showToast(msg) {
-  const toast = document.getElementById('toast');
-  document.getElementById('toastMsg').textContent = msg;
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 3000);
-}
-
-// ── FORM ──
-function submitForm(e) {
-  e.preventDefault();
-  showToast('Enquiry sent! We\'ll contact you shortly.');
-  e.target.reset();
-}
-
-// ── MOBILE MENU ──
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.add('open');
-  document.body.style.overflow = 'hidden';
+/* NAV */
+function tN(){document.getElementById('ham').classList.toggle('open');document.getElementById('mn').classList.toggle('open');}
+function cN(){document.getElementById('ham').classList.remove('open');document.getElementById('mn').classList.remove('open');}
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+window.addEventListener('scroll',()=>{
+  let c='';
+  document.querySelectorAll('section[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-100)c=s.id;});
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c));
 });
 
-document.getElementById('menuClose').addEventListener('click', closeMobileMenu);
-
-function closeMobileMenu() {
-  document.getElementById('mobileMenu').classList.remove('open');
-  document.body.style.overflow = '';
+/* FAQ */
+function toggleFaq(el){
+  const ans=el.nextElementSibling;
+  const isOpen=ans.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(q=>q.classList.remove('open'));
+  if(!isOpen){ans.classList.add('open');el.classList.add('open');}
 }
 
-// ── BACK TO TOP ──
-window.addEventListener('scroll', () => {
-  const btt = document.getElementById('backToTop');
-  if (window.scrollY > 500) btt.classList.add('visible');
-  else btt.classList.remove('visible');
-});
-
-// ── FADE UP OBSERVER ──
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+/* CALENDAR */
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+let calYear,calMonth,selDate=null;
+function initCal(){const now=new Date();calYear=now.getFullYear();calMonth=now.getMonth();}
+function renderCal(){
+  document.getElementById('calTitle').textContent=MONTHS[calMonth]+' '+calYear;
+  const days=document.getElementById('calDays');days.innerHTML='';
+  const today=new Date();
+  const firstDay=new Date(calYear,calMonth,1).getDay();
+  const totalDays=new Date(calYear,calMonth+1,0).getDate();
+  for(let i=0;i<firstDay;i++){const el=document.createElement('div');el.className='cal-day empty';days.appendChild(el);}
+  for(let d=1;d<=totalDays;d++){
+    const el=document.createElement('div');el.className='cal-day';el.textContent=d;
+    const thisDate=new Date(calYear,calMonth,d);
+    const isPast=thisDate<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    if(isPast){el.classList.add('disabled');}
+    else{
+      if(d===today.getDate()&&calMonth===today.getMonth()&&calYear===today.getFullYear())el.classList.add('today');
+      if(selDate&&d===selDate.getDate()&&calMonth===selDate.getMonth()&&calYear===selDate.getFullYear())el.classList.add('selected');
+      el.onclick=()=>pickDay(d);
     }
-  });
-}, { threshold: 0.1 });
+    days.appendChild(el);
+  }
+}
+function pickDay(d){
+  selDate=new Date(calYear,calMonth,d);
+  const dd=String(d).padStart(2,'0'),mm=String(calMonth+1).padStart(2,'0');
+  document.getElementById('dateDisplayText').textContent=dd+' '+MONTHS[calMonth].slice(0,3)+' '+calYear;
+  document.getElementById('dateDisplayText').style.color='#fff';
+  document.getElementById('f9').value=calYear+'-'+mm+'-'+dd;
+  closeCal();
+}
+function calNav(dir){calMonth+=dir;if(calMonth>11){calMonth=0;calYear++;}if(calMonth<0){calMonth=11;calYear--;}renderCal();}
+function toggleCal(){const pop=document.getElementById('calPop');if(pop.classList.contains('open')){closeCal();}else{pop.classList.add('open');renderCal();}}
+function closeCal(){document.getElementById('calPop').classList.remove('open');}
+function goToday(){const now=new Date();calYear=now.getFullYear();calMonth=now.getMonth();pickDay(now.getDate());}
+function clearDate(){selDate=null;document.getElementById('dateDisplayText').textContent='Select a date';document.getElementById('dateDisplayText').style.color='rgba(255,255,255,.45)';document.getElementById('f9').value='';renderCal();}
+document.addEventListener('click',function(e){const wrap=document.getElementById('dateWrap');if(wrap&&!wrap.contains(e.target))closeCal();});
+initCal();
 
-// ── INIT ──
-document.addEventListener('DOMContentLoaded', () => {
-  renderProducts();
-  renderTestimonials();
-  renderFAQ();
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  // observe dynamically rendered cards
-  setTimeout(() => {
-    document.querySelectorAll('.product-card, .why-card, .location-card, .testimonial-card').forEach(el => {
-      el.style.opacity = '1';
-    });
-  }, 100);
-});
+/* SERVICE MODALS */
+const D={
+  physio:{title:'Physiotherapy',img:'bg.webp',ov:'Our physiotherapy services address the full spectrum of physical conditions — from acute sports injuries to chronic pain and post-surgical recovery. We use evidence-based techniques to restore movement, reduce pain, and improve function.',cond:['Sports injury management','Post-surgery recovery','Back &amp; neck pain','Stroke rehabilitation','Chronic pain management','Cardio-pulmonary rehabilitation','Adults &amp; paediatric neurological rehab','Geriatric physiotherapy (elderly care)'],tx:['Manual therapy &amp; joint mobilisation','Therapeutic exercise programs','Electrotherapy &amp; ultrasound','Taping &amp; bracing','Gait retraining','Postural correction','Progressive functional rehabilitation'],cta:'Book Physiotherapy'},
+  occ:{title:'Occupational Therapy',img:'occpy.webp',ov:'Occupational therapy helps individuals regain the ability to perform meaningful daily activities — from self-care and cooking to work and leisure — following illness, injury, developmental delay, or disability.',cond:['Stroke and acquired brain injury','Developmental delays in children','Fine motor skill difficulties','Upper limb injuries','Mental health conditions','Autism spectrum disorder','Work-related functional impairment','Post-surgical upper limb rehab'],tx:['Activities of daily living training','Fine motor skill rehabilitation','Adaptive equipment prescription','Home and workplace assessments','Cognitive rehabilitation','Splinting and orthotics','Sensory processing therapy'],cta:'Book Occupational Therapy'},
+  speech:{title:'Speech Therapy',img:'speech.webp',ov:'Our speech-language therapists support individuals of all ages with communication and swallowing difficulties — from children with delayed speech to adults recovering from stroke or neurological conditions.',cond:['Delayed speech and language development','Stuttering and fluency disorders','Voice disorders','Aphasia following stroke','Swallowing difficulties (dysphagia)','Autism-related communication challenges','Traumatic brain injury communication','Social communication difficulties'],tx:['Language stimulation therapy','Articulation and phonological therapy','Voice therapy techniques','Dysphagia management &amp; strategies','Augmentative communication support','Parent and carer coaching','Cognitive-communication rehabilitation'],cta:'Book Speech Therapy'},
+  sports:{title:'Sports Injury Rehabilitation',img:'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=900&q=80',ov:'Evidence-based rehabilitation for athletes and active individuals — ensuring safe return to sport and long-term injury prevention. Our physiotherapists understand the demands of sport at every level.',cond:['ACL and knee ligament injuries','Hamstring and quad tears','Ankle sprains and fractures','Shoulder dislocations','Rotator cuff injuries','Stress fractures','Overuse injuries','Pre and post-competition conditioning'],tx:['Injury-specific rehabilitation protocols','Strength and conditioning programs','Neuromuscular re-education','Return-to-sport progression testing','Sport-specific functional training','Injury prevention strategies','Biomechanical analysis'],cta:'Book Sports Rehab'},
+  neuro:{title:'Neurological Rehabilitation',img:'occpy.webp',ov:'Specialist neurological rehabilitation for adults and children with conditions affecting the brain, spinal cord, and peripheral nervous system — focused on maximising independence and quality of life.',cond:['Stroke recovery &amp; hemiplegia','Parkinson\'s disease','Multiple sclerosis','Spinal cord injuries','Traumatic brain injury','Peripheral nerve injuries','Guillain-Barré syndrome','Cerebral palsy'],tx:['Neuroplasticity-based exercise therapy','Gait re-education and walking aids','Balance and proprioception training','Upper and lower limb rehabilitation','Functional independence training','Constraint-induced movement therapy','Home exercise program development'],cta:'Book Neurological Rehab'},
+  geriatric:{title:'Geriatric Physiotherapy',img:'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=900&q=80',ov:'Specialist physiotherapy for older adults — addressing the unique physical challenges of ageing with dignity, compassion, and clinical expertise. Helping elderly patients maintain independence and quality of life.',cond:['Osteoarthritis and joint pain','Osteoporosis management','Falls and balance problems','Post-fracture rehabilitation','General deconditioning and weakness','Parkinsonian mobility challenges','Post-stroke recovery in elderly','Chronic pain in older adults'],tx:['Falls prevention programs','Balance and stability training','Progressive strength training','Mobility and walking re-education','Pain management strategies','Home exercise programs','Assistive device training'],cta:'Book Geriatric Physiotherapy'},
+  postsurg:{title:'Post-Surgical Rehabilitation',img:'post.jpg',ov:'Guided, structured recovery programmes following orthopaedic, cardiac, or general surgery — helping patients regain strength, mobility, and independence as safely and efficiently as possible.',cond:['Knee replacement recovery','Hip replacement recovery','Shoulder surgery rehabilitation','Spinal surgery recovery','Cardiac surgery rehabilitation','Abdominal surgery recovery','Fracture fixation rehabilitation','Soft tissue repair recovery'],tx:['Post-operative exercise protocols','Swelling and pain management','Scar tissue mobilisation','Progressive strength rebuilding','Gait and mobility retraining','Return to function testing','Home exercise planning'],cta:'Book Post-Surgical Rehab'}
+};
+function oM(k){
+  const s=D[k];
+  document.getElementById('mi').src=s.img;
+  const c=s.cond.map(x=>'<li>'+x+'</li>').join('');
+  const t=s.tx.map(x=>'<li>'+x+'</li>').join('');
+  document.getElementById('mbd').innerHTML='<div class="ey" style="margin-bottom:8px;"><div class="st">'+s.title+'</div></div><div class="ul"></div><p class="sb" style="margin-bottom:6px;">'+s.ov+'</p><div class="m-cols"><div><div class="mct">Conditions Treated</div><ul class="mul">'+c+'</ul></div><div><div class="mct">Treatment Approach</div><ul class="mul">'+t+'</ul></div></div><div style="margin-top:30px;"><a href="#booking" class="btn-blue" onclick="cM()">'+s.cta+'</a></div>';
+  document.getElementById('mo').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function cM(){document.getElementById('mo').classList.remove('open');document.body.style.overflow='';}
+function cMO(e){if(e.target.id==='mo')cM();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cM();});
+
+/* FORM */
+function getFormData(){
+  const v=id=>document.getElementById(id)?document.getElementById(id).value.trim():'';
+  return{
+    name:(v('f1')+' '+v('f2')).trim()||'Not provided',
+    phone:v('f3')||'Not provided',email:v('f4')||'Not provided',
+    dob:v('f5')||'Not provided',gender:v('f6')||'Not provided',
+    service:v('f8')||'Not provided',
+    date:document.getElementById('f9').value||'Not provided',
+    time:v('f10')||'Not provided',referral:v('f11')||'Not provided',
+    source:v('f12')||'Not provided',condition:v('f13')||'Not provided',
+    previous:v('f14')||'Not provided'
+  };
+}
+function sF(method){
+  const d=getFormData();
+  const msg='NEW APPOINTMENT REQUEST – MedRehab\n\n'+
+    'Name: '+d.name+'\nPhone: '+d.phone+'\nEmail: '+d.email+'\n'+
+    'Date of Birth: '+d.dob+'\nGender: '+d.gender+'\n'+
+    'Location: 23 Clayton Road, Milton Park, Harare\nService: '+d.service+'\n'+
+    'Preferred Date: '+d.date+'\nPreferred Time: '+d.time+'\n'+
+    'Referral/Medical Aid: '+d.referral+'\nHeard About Us: '+d.source+'\n'+
+    'Condition: '+d.condition+'\nPrevious Treatment: '+d.previous;
+  if(method==='wa'){window.open('https://wa.me/263773510223?text='+encodeURIComponent(msg),'_blank');}
+  else{window.location.href='mailto:themedrehab@gmail.com?subject='+encodeURIComponent('Appointment Request – MedRehab – '+d.name)+'&body='+encodeURIComponent(msg);}
+  document.getElementById('fw').style.display='none';
+  document.getElementById('fs').style.display='block';
+}
+function rF(){
+  ['f1','f2','f3','f4','f5','f6','f8','f9','f10','f11','f12','f13','f14'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  selDate=null;
+  document.getElementById('dateDisplayText').textContent='Select a date';
+  document.getElementById('dateDisplayText').style.color='rgba(255,255,255,.45)';
+  document.getElementById('fs').style.display='none';
+  document.getElementById('fw').style.display='block';
+}
+function activateMap(id){document.getElementById(id).classList.add('active');}
+
+
+
+
+
+
+
+
+
+
+
 </script>
+
+
+
 </body>
 </html>
